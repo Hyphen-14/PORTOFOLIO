@@ -1,0 +1,425 @@
+/* ============================================================
+   BASE — tokens, reset, typography, RPG window primitives, HUD
+   ============================================================ */
+
+:root {
+  --font-pixel: 'Press Start 2P', ui-monospace, monospace;
+  --font-body: 'Fira Code', ui-monospace, monospace;
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+
+  --ink: #ffffff;
+  --muted: #8b9bb4;
+  --gold: #fde06d;
+  --crimson: #ff2a6d;
+  --neon: #05d9e8;
+  --green: #01ffc3;
+  --magenta: #ff00ff;
+
+  --bg: #050a1f;
+  --bg-pattern: rgba(5, 217, 232, 0.05);
+  --win-top: rgba(20, 15, 45, 0.85);
+  --win-bot: rgba(5, 10, 31, 0.92);
+  --win-border: var(--neon);
+  --win-shadow: rgba(0, 0, 0, 0.8);
+  --accent: var(--magenta);
+  --glow: 0 0 15px rgba(5, 217, 232, 0.6);
+
+  --hud-h: 60px;
+  --radius: 4px;
+  color-scheme: dark;
+}
+
+:root[data-time='night'] {
+  --bg: #07080f;
+  --bg-pattern: rgba(56, 232, 255, 0.04);
+  --win-top: #151b3d;
+  --win-bot: #070a1a;
+  --win-border: #38e8ff;
+  --accent: var(--neon);
+  --glow: 0 0 12px rgba(56, 232, 255, 0.35);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--hud-h) + 12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--bg-pattern) 2px, transparent 2px),
+    linear-gradient(90deg, var(--bg-pattern) 2px, transparent 2px);
+  background-size: 32px 32px;
+  transition: background-color 0.6s ease;
+  -webkit-font-smoothing: antialiased;
+  cursor: var(--cursor, auto);
+}
+
+a,
+button,
+[role='tab'],
+label[for],
+summary {
+  cursor: var(--cursor-pointer, pointer);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-pixel);
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px dashed var(--gold-hi);
+  outline-offset: 3px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: -60px;
+  z-index: 100;
+  padding: 10px 14px;
+  background: var(--gold);
+  color: #111;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* ---------- RPG window (Final Fantasy style) ---------- */
+.rpg-window {
+  position: relative;
+  background: linear-gradient(135deg, rgba(5, 217, 232, 0.08), rgba(20, 15, 45, 0.65));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(5, 217, 232, 0.4);
+  border-top: 3px solid var(--neon);
+  border-bottom: 3px solid var(--magenta);
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+  box-shadow:
+    inset 0 0 20px rgba(5, 217, 232, 0.05),
+    var(--glow);
+  transition: all 0.3s ease;
+}
+
+/* Add inner hologram scanlines */
+.rpg-window::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(5, 217, 232, 0.03) 2px,
+    rgba(5, 217, 232, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+.rpg-btn {
+  --btn-bg: var(--win-bot);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.85em 1.2em;
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--btn-bg);
+  border: 3px solid var(--win-border);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 3px var(--win-shadow),
+    4px 4px 0 3px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.08s steps(2),
+    box-shadow 0.08s steps(2),
+    background 0.2s;
+}
+.rpg-btn:hover {
+  --btn-bg: var(--win-top);
+  transform: translate(-2px, -2px);
+  box-shadow:
+    0 0 0 3px var(--win-shadow),
+    6px 6px 0 3px rgba(0, 0, 0, 0.45);
+}
+.rpg-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow:
+    0 0 0 3px var(--win-shadow),
+    1px 1px 0 3px rgba(0, 0, 0, 0.45);
+}
+.rpg-btn.primary {
+  --btn-bg: var(--crimson);
+  border-color: var(--gold-hi);
+}
+.rpg-btn.primary:hover {
+  --btn-bg: #d93a4c;
+}
+
+/* FF "hand pointer" hover cue for menu items */
+.menu-item {
+  position: relative;
+}
+.menu-item::before {
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 50%;
+  width: 18px;
+  height: 14px;
+  translate: -6px -50%;
+  opacity: 0;
+  background: var(--hand-pointer) center / contain no-repeat;
+  image-rendering: pixelated;
+  transition:
+    opacity 0.1s,
+    translate 0.15s steps(3);
+  pointer-events: none;
+}
+.menu-item:is(:hover, :focus-visible, [aria-selected='true'], [aria-current='true'])::before {
+  opacity: 1;
+  translate: 0 -50%;
+}
+
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+/* ---------- HUD ---------- */
+.hud {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 40;
+  height: var(--hud-h);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+  background: linear-gradient(180deg, rgba(7, 8, 15, 0.92), rgba(7, 8, 15, 0.75));
+  border-bottom: 3px solid var(--win-border);
+  box-shadow: 0 3px 0 var(--win-shadow);
+  backdrop-filter: blur(6px);
+  transition: border-color 0.6s;
+}
+
+.hud-player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.hud-player img {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--win-border);
+  border-radius: 4px;
+  object-fit: cover;
+}
+.hud-player-meta {
+  display: grid;
+  gap: 4px;
+}
+.hud-name {
+  font-family: var(--font-pixel);
+  font-size: 0.65rem;
+}
+.hud-bars {
+  display: grid;
+  gap: 2px;
+}
+.hud-bar {
+  display: block;
+  width: 64px;
+  height: 5px;
+  background: #23263a;
+  border: 1px solid #000;
+}
+.hud-bar i {
+  display: block;
+  height: 100%;
+  background: var(--green);
+}
+.hud-bar.mp i {
+  width: 87%;
+  background: var(--neon);
+}
+
+.hud-nav {
+  display: flex;
+  gap: 4px;
+  margin-inline: auto;
+  scroll-target-group: auto;
+}
+.hud-nav a {
+  position: relative;
+  padding: 8px 10px;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-decoration: none;
+  border-radius: 4px;
+}
+.hud-nav a:hover {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.06);
+}
+/* Scrollspy (native :target-current + JS fallback class). Not colour-only: underline bar. */
+.hud-nav a:is(:target-current, .\:target-current) {
+  color: var(--accent);
+}
+.hud-nav a:is(:target-current, .\:target-current)::after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 2px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.hud-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.hud-btn {
+  display: inline-grid;
+  place-items: center;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 8px;
+  font-family: var(--font-pixel);
+  font-size: 0.85rem;
+  color: var(--ink);
+  text-decoration: none;
+  background: var(--win-bot);
+  border: 2px solid var(--win-border);
+  border-radius: 4px;
+  transition: transform 0.08s steps(2);
+}
+.hud-btn:hover {
+  transform: translateY(-2px);
+}
+.hud-cv {
+  font-size: 0.6rem;
+  background: var(--crimson);
+}
+.hud-menu {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .hud-menu {
+    display: inline-grid;
+  }
+  .hud-nav {
+    position: fixed;
+    top: calc(var(--hud-h) + 8px);
+    right: 12px;
+    flex-direction: column;
+    min-width: 220px;
+    padding: 14px 14px 14px 34px;
+    background: linear-gradient(180deg, var(--win-top), var(--win-bot));
+    border: 3px solid var(--win-border);
+    border-radius: var(--radius);
+    box-shadow:
+      0 0 0 3px var(--win-shadow),
+      6px 6px 0 3px rgba(0, 0, 0, 0.45);
+    translate: 0 -12px;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.15s,
+      translate 0.15s steps(3),
+      visibility 0.15s;
+  }
+  .hud-nav.open {
+    opacity: 1;
+    translate: 0 0;
+    visibility: visible;
+  }
+  .hud-nav a {
+    font-size: 0.7rem;
+    padding: 10px 6px;
+  }
+}
+@media (max-width: 480px) {
+  .hud {
+    gap: 8px;
+    padding: 0 10px;
+  }
+  .hud-bars {
+    display: none;
+  }
+}

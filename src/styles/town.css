@@ -1,0 +1,480 @@
+/* ============================================================
+   TOWN (overworld), TITLE SCREEN, DIALOG, TRANSITIONS, TOASTS
+   ============================================================ */
+
+/* ---------- Title screen ---------- */
+.title-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #05060c;
+  text-align: center;
+  transition:
+    opacity 0.5s steps(5),
+    visibility 0.5s;
+}
+.title-screen.leaving {
+  opacity: 0;
+  visibility: hidden;
+}
+.title-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1px 1px at 10% 20%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 30% 70%, #9ff 50%, transparent 51%),
+    radial-gradient(2px 2px at 55% 30%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 75% 15%, #fff 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 55%, #ffb 50%, transparent 51%),
+    radial-gradient(2px 2px at 20% 45%, #bdf 50%, transparent 51%),
+    radial-gradient(1px 1px at 65% 60%, #fff 50%, transparent 51%),
+    linear-gradient(180deg, #05060c 0%, #10153a 60%, #2a1640 100%);
+  animation: twinkle 3s steps(3) infinite alternate;
+}
+@keyframes twinkle {
+  to {
+    filter: brightness(1.4);
+  }
+}
+.title-skyline {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 32vh;
+  background:
+    linear-gradient(transparent 0 0) 0 0 / 0 0,
+    repeating-linear-gradient(90deg, transparent 0 14px, rgba(253, 224, 109, 0.85) 14px 18px, transparent 18px 40px) 0 40% / 100% 6px no-repeat,
+    repeating-linear-gradient(90deg, transparent 0 30px, rgba(56, 232, 255, 0.7) 30px 34px, transparent 34px 70px) 0 65% / 100% 6px no-repeat,
+    #0b0e22;
+  clip-path: polygon(0 40%, 6% 40%, 6% 15%, 12% 15%, 12% 35%, 18% 35%, 18% 0, 23% 0, 23% 30%, 30% 30%, 30% 20%, 37% 20%, 37% 45%, 44% 45%, 44% 10%, 50% 10%, 50% 5%, 53% 5%, 53% 25%, 60% 25%, 60% 38%, 67% 38%, 67% 12%, 74% 12%, 74% 30%, 81% 30%, 81% 22%, 88% 22%, 88% 42%, 94% 42%, 94% 18%, 100% 18%, 100% 100%, 0 100%);
+}
+.title-content {
+  position: relative;
+  display: grid;
+  gap: 22px;
+  padding: 24px;
+  animation: title-drop 0.9s steps(9) both;
+}
+@keyframes title-drop {
+  from {
+    translate: 0 -40px;
+    opacity: 0;
+  }
+}
+.title-kicker {
+  font-family: var(--font-pixel);
+  font-size: clamp(0.55rem, 1.6vw, 0.8rem);
+  color: var(--neon);
+  letter-spacing: 0.15em;
+}
+.title-name {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2em 0.5em;
+  font-size: clamp(1.5rem, 6vw, 3.6rem);
+  color: var(--gold-hi);
+  text-shadow:
+    4px 4px 0 var(--crimson),
+    8px 8px 0 #000;
+}
+.title-press {
+  margin-top: 18px;
+  font-family: var(--font-pixel);
+  font-size: clamp(0.8rem, 2.2vw, 1.1rem);
+  animation: blink 1s steps(2, start) infinite;
+}
+.title-hint {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.title-copy {
+  position: absolute;
+  bottom: 14px;
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  color: #6b7299;
+}
+
+/* ---------- Overworld ---------- */
+.town {
+  position: relative;
+  height: 100svh;
+  min-height: 480px;
+  padding-top: var(--hud-h);
+  overflow: hidden;
+  background: #0b0d17;
+}
+.world-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  touch-action: manipulation;
+  outline: none;
+}
+
+.town-badge {
+  position: absolute;
+  top: calc(var(--hud-h) + 14px);
+  left: 14px;
+  display: grid;
+  gap: 4px;
+  padding: 10px 14px;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+}
+.town-badge-time {
+  color: var(--accent);
+}
+
+.fast-travel {
+  position: absolute;
+  top: calc(var(--hud-h) + 14px);
+  right: 14px;
+  padding: 12px 14px 12px 36px;
+  width: 230px;
+}
+.fast-travel-title {
+  margin-bottom: 8px;
+  margin-left: -20px;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: var(--accent);
+}
+.fast-travel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+.fast-travel button {
+  width: 100%;
+  padding: 5px 0;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  background: none;
+  border: 0;
+}
+.fast-travel button small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.2;
+}
+.fast-travel button:hover {
+  color: var(--gold-hi);
+}
+
+.town-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 54px;
+  translate: -50% 0;
+  padding: 6px 12px;
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  white-space: nowrap;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 4px;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+.town-hint.hide {
+  opacity: 0;
+}
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  translate: -50% 0;
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 #000;
+  animation: bob 1.2s steps(2) infinite;
+}
+@keyframes bob {
+  50% {
+    translate: -50% 4px;
+  }
+}
+
+/* ---------- Dialog box ---------- */
+.dialog {
+  position: absolute;
+  left: 50%;
+  bottom: 84px;
+  translate: -50% 0;
+  width: min(760px, calc(100% - 28px));
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  animation: dialog-in 0.25s steps(4) both;
+}
+@keyframes dialog-in {
+  from {
+    scale: 1 0;
+  }
+}
+.dialog-portrait,
+.dialog-portrait-canvas {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border: 3px solid var(--win-border);
+  border-radius: 4px;
+  background: #1a1c2c;
+  image-rendering: pixelated;
+}
+.dialog-portrait-canvas {
+  object-fit: contain;
+}
+.dialog-body {
+  flex: 1;
+  min-width: 0;
+}
+.dialog-name {
+  margin-bottom: 6px;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  color: var(--accent);
+}
+.dialog-text {
+  min-height: 3.1em;
+  font-size: 1.15rem;
+}
+.dialog-next {
+  align-self: flex-end;
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  color: var(--gold-hi);
+  background: none;
+  border: 0;
+  animation: bob-small 0.8s steps(2) infinite;
+}
+@keyframes bob-small {
+  50% {
+    translate: 0 4px;
+  }
+}
+
+/* ---------- Virtual D-pad ---------- */
+.dpad {
+  position: absolute;
+  left: 18px;
+  bottom: 70px;
+  display: grid;
+  grid-template: repeat(3, 48px) / repeat(3, 48px);
+  gap: 2px;
+  z-index: 5;
+}
+.dpad button {
+  font-size: 1rem;
+  color: #fff;
+  background: rgba(10, 12, 24, 0.75);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  touch-action: none;
+  user-select: none;
+}
+.dpad button:active,
+.dpad button.pressed {
+  background: var(--crimson);
+}
+.dpad [data-dir='up'] {
+  grid-area: 1 / 2;
+}
+.dpad [data-dir='left'] {
+  grid-area: 2 / 1;
+}
+.dpad [data-dir='right'] {
+  grid-area: 2 / 3;
+}
+.dpad [data-dir='down'] {
+  grid-area: 3 / 2;
+}
+.dpad-toggle {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+}
+
+@media (max-width: 860px) {
+  .fast-travel {
+    top: auto;
+    bottom: 14px;
+    right: 14px;
+    width: auto;
+    padding: 8px 10px;
+  }
+  .fast-travel ul {
+    display: none;
+  }
+  .fast-travel.open ul {
+    display: grid;
+    position: absolute;
+    bottom: calc(100% + 12px);
+    right: -3px;
+    width: 230px;
+    padding: 12px 14px 12px 36px;
+    background: linear-gradient(180deg, var(--win-top), var(--win-bot));
+    border: 3px solid var(--win-border);
+    border-radius: var(--radius);
+    box-shadow: 0 0 0 3px var(--win-shadow);
+  }
+  .fast-travel-title {
+    margin: 0;
+  }
+  .fast-travel-title button {
+    font-family: var(--font-pixel);
+    font-size: 0.6rem;
+    color: var(--accent);
+    background: none;
+    border: 0;
+    padding: 4px;
+  }
+  .dialog {
+    bottom: 66px;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+  .dialog-portrait,
+  .dialog-portrait-canvas {
+    width: 64px;
+    height: 64px;
+  }
+  .dialog-text {
+    font-size: 1rem;
+  }
+  .town-hint {
+    display: none;
+  }
+  .scroll-cue {
+    left: auto;
+    right: 50%;
+  }
+}
+
+/* ---------- Full-screen "enter building" transition ---------- */
+.screen-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  pointer-events: none;
+}
+.screen-transition span {
+  background: #000;
+  scale: 0 1;
+  transform-origin: left;
+}
+.screen-transition span:nth-child(even) {
+  transform-origin: right;
+}
+.screen-transition.closing span {
+  animation: stripe-close 0.35s steps(7) forwards;
+  animation-delay: calc(var(--i) * 18ms);
+}
+.screen-transition.opening span {
+  scale: 1 1;
+  animation: stripe-open 0.35s steps(7) forwards;
+  animation-delay: calc(var(--i) * 18ms);
+}
+@keyframes stripe-close {
+  to {
+    scale: 1 1;
+  }
+}
+@keyframes stripe-open {
+  to {
+    scale: 0 1;
+  }
+}
+.screen-transition .transition-label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-pixel);
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+  color: var(--gold-hi);
+  background: none;
+  opacity: 0;
+  scale: 1;
+}
+.screen-transition.closing .transition-label {
+  animation: label-in 0.3s 0.3s steps(3) forwards;
+}
+@keyframes label-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- Toasts (achievement unlocked) ---------- */
+.toasts {
+  position: fixed;
+  top: calc(var(--hud-h) + 16px);
+  left: 50%;
+  translate: -50% 0;
+  z-index: 70;
+  display: grid;
+  gap: 10px;
+  width: min(420px, calc(100% - 24px));
+  pointer-events: none;
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border-color: var(--gold-hi) !important;
+  animation:
+    toast-in 0.35s steps(5) both,
+    toast-out 0.35s steps(5) 3.6s forwards;
+}
+.toast-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+.toast-kicker {
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  color: var(--gold-hi);
+}
+.toast-title {
+  font-size: 1.05rem;
+}
+@keyframes toast-in {
+  from {
+    translate: 0 -30px;
+    opacity: 0;
+  }
+}
+@keyframes toast-out {
+  to {
+    translate: 0 -30px;
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: fixed;
+  inset: 0;
+  z-index: 69;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  image-rendering: pixelated;
+}

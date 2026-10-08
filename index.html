@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>HACKER QUEST - Yasin Taryaqil Aghyar</title>
+  <meta name="description" content="Cyber Security and Software Development Portfolio of Yasin Taryaqil Aghyar" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Space+Grotesk:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/styles/base.css" />
+  <link rel="stylesheet" href="/src/styles/sections.css" />
+  
+  <style>
+    /* Inline styles for Title Screen and CRT */
+    .crt::before {
+      content: " ";
+      display: block;
+      position: fixed;
+      top: 0; left: 0; bottom: 0; right: 0;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      z-index: 200;
+      background-size: 100% 2px, 3px 100%;
+      pointer-events: none;
+    }
+    
+    .cyberpunk-bg {
+      position: fixed;
+      top: -5%;
+      left: -5%;
+      width: 130%;
+      height: 110%;
+      background: url('/assets/bg-cyberpunk-wide.jpg') left top/cover no-repeat;
+      z-index: -3;
+      image-rendering: pixelated;
+      /* Scroll-driven Parallax */
+      animation: parallaxScroll linear both;
+      animation-timeline: scroll(root block);
+    }
+
+    @keyframes parallaxScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-15%); }
+    }
+
+    /* Cyber Dust / Floating Particles */
+    .cyber-dust {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(5, 217, 232, 0.8) 2px, transparent 3px),
+        radial-gradient(circle at 85% 30%, rgba(255, 0, 255, 0.8) 2px, transparent 3px),
+        radial-gradient(circle at 50% 80%, rgba(1, 255, 195, 0.8) 2px, transparent 3px),
+        radial-gradient(circle at 30% 20%, rgba(255, 230, 0, 0.6) 2px, transparent 4px);
+      background-size: 120px 120px, 160px 160px, 200px 200px, 140px 140px;
+      animation: floatDust 15s linear infinite;
+    }
+
+    @keyframes floatDust {
+      0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+      100% { background-position: 120px -120px, -160px 160px, 0 -200px, 140px 140px; }
+    }
+
+
+    
+    #title-screen {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(5, 10, 31, 0.85); /* Translucent dark blue */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      transition: opacity 1s ease-out;
+      cursor: pointer;
+    }
+    
+    #title-screen h1 {
+      font-family: var(--font-pixel);
+      color: var(--accent);
+      font-size: clamp(2rem, 5vw, 4rem);
+      text-shadow: 4px 4px 0 #000;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .press-start {
+      font-family: var(--font-pixel);
+      color: var(--ink);
+      animation: blink 1.2s infinite;
+      font-size: 1.2rem;
+    }
+    
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .cyber-lock {
+      width: 120px;
+      height: 120px;
+      border: 3px solid rgba(5, 217, 232, 0.3);
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 2rem;
+      animation: spin 6s linear infinite;
+      box-shadow: 0 0 20px rgba(5, 217, 232, 0.2), inset 0 0 20px rgba(5, 217, 232, 0.2);
+    }
+    .cyber-lock::before, .cyber-lock::after {
+      content: '';
+      position: absolute;
+      border: 3px solid transparent;
+      border-radius: 50%;
+    }
+    .cyber-lock::before {
+      top: -15px; left: -15px; right: -15px; bottom: -15px;
+      border-top-color: var(--magenta);
+      border-bottom-color: var(--magenta);
+      animation: spin 4s linear infinite reverse;
+      box-shadow: 0 0 10px var(--magenta);
+    }
+    .cyber-lock::after {
+      top: 5px; left: 5px; right: 5px; bottom: 5px;
+      border-left-color: var(--neon);
+      border-right-color: var(--neon);
+      animation: spin 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    }
+    .cyber-lock-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5rem;
+      color: var(--neon);
+      text-shadow: 0 0 15px var(--neon);
+      animation: pulse 2s infinite alternate;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.9); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+    }
+    
+    .hidden {
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+    
+    #app-content {
+      display: none; /* hidden until start */
+    }
+    
+    /* Pop-up achievement */
+    #achievement-popup {
+      position: fixed;
+      bottom: -100px;
+      right: 20px;
+      width: 300px;
+      padding: 15px;
+      background: #111b5c;
+      border: 3px solid #eab339;
+      color: #fff;
+      font-family: var(--font-pixel);
+      font-size: 0.6rem;
+      z-index: 150;
+      transition: bottom 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 5px 5px 0 #000;
+    }
+    #achievement-popup.show {
+      bottom: 20px;
+    }
+    #achievement-icon {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body class="crt">
+  <div class="cyberpunk-bg"></div>
+  <div class="cyber-dust"></div>
+  
+  <div id="title-screen">
+    <div style="position:relative; margin-bottom: 2rem;">
+      <div class="cyber-lock"></div>
+      <div class="cyber-lock-center" id="lock-icon">
+        <svg width="40" height="50" viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path id="shackle" d="M10 20V12C10 6.477 14.477 2 20 2C25.523 2 30 6.477 30 12V20" stroke="var(--neon)" stroke-width="4" stroke-linecap="square" style="transition: transform 0.5s ease-in-out;" />
+          <rect x="2" y="20" width="36" height="28" fill="var(--neon)" stroke="var(--neon)" stroke-width="2"/>
+          <circle cx="20" cy="34" r="4" fill="#050a1f"/>
+          <path d="M20 38V42" stroke="#050a1f" stroke-width="3"/>
+        </svg>
+      </div>
+    </div>
+    <h1 style="letter-spacing: 4px; text-shadow: 0 0 10px var(--accent);">UNLOCK PROFILE</h1>
+    <div class="press-start" style="margin-top: 2rem; color: var(--neon); text-shadow: 0 0 5px var(--neon);">[ CLICK ANYWHERE TO DECRYPT ]</div>
+  </div>
+
+  <div id="app-content">
+    <!-- HUD -->
+    <header class="hud rpg-window" id="hud" style="position: sticky; top: 0; z-index: 50; border-radius: 0;">
+      <div class="hud-player" style="display:flex; align-items:center; gap: 10px;">
+        <img src="/assets/portraits/portrait.jpg" alt="Yasin" style="width: 40px; height: 40px; border: 2px solid #fff;" />
+        <div class="hud-player-meta">
+          <div class="hud-name" style="font-family: var(--font-pixel); font-size: 0.7rem;">YASIN_TA</div>
+          <div class="hud-bars" style="display:flex; gap: 10px; margin-top: 5px;">
+            <div class="hud-bar hp" style="font-size:0.5rem; color:#41f28b;">HP [||||||||||]</div>
+            <div class="hud-bar mp" style="font-size:0.5rem; color:#38e8ff;">MP [||||||||||]</div>
+          </div>
+        </div>
+      </div>
+      <nav class="hud-nav" id="hud-nav" style="display:flex; gap: 15px; align-items:center; font-family: var(--font-pixel); font-size: 0.6rem;">
+        <a href="#about" style="color:var(--ink); text-decoration:none;">Profile</a>
+        <a href="#experience" style="color:var(--ink); text-decoration:none;">Quests</a>
+        <a href="#projects" style="color:var(--ink); text-decoration:none;">Missions</a>
+        <a href="#certifications" style="color:var(--ink); text-decoration:none;">Trophies</a>
+        <a href="#skills" style="color:var(--ink); text-decoration:none;">Status</a>
+        <a href="#contact" style="color:var(--ink); text-decoration:none;">Contact</a>
+      </nav>
+      <div class="hud-actions" style="display:flex; gap: 10px;">
+        <button class="hud-btn" id="audio-toggle" aria-label="Toggle Audio" style="background:transparent; border:none; color:#fff; cursor:pointer;">🔇</button>
+        <button class="hud-btn" id="crt-toggle" aria-label="Toggle CRT" style="background:transparent; border:none; color:#fff; cursor:pointer;">📺</button>
+      </div>
+    </header>
+
+    <!-- HTML Scrollable Content -->
+    <main id="html-content" style="max-width: 1200px; margin: 0 auto; padding-top: 20px;">
+      <section id="about" class="section"></section>
+      <section id="experience" class="section"></section>
+      <section id="projects" class="section"></section>
+      <section id="certifications" class="section"></section>
+      <section id="skills" class="section"></section>
+      <section id="contact" class="section"></section>
+    </main>
+  </div>
+  
+  <div id="achievement-popup">
+    <div id="achievement-icon">🏆</div>
+    <div>
+      <div style="color:var(--gold); margin-bottom:4px;">ACHIEVEMENT UNLOCKED</div>
+      <div id="achievement-text">Discovered a new area!</div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
+
