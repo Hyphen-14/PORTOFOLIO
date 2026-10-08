@@ -11,56 +11,50 @@ function init() {
   const titleScreen = document.getElementById('title-screen');
   const appContent = document.getElementById('app-content');
   
-  titleScreen.addEventListener('click', () => {
-    if (appStarted) return;
-    appStarted = true;
-    playSound('blip');
+  if (appStarted) return;
+  appStarted = true;
 
-    // 1. Decrypt Animation Phase
-    const textEl = titleScreen.querySelector('h1');
-    const subTextEl = titleScreen.querySelector('.press-start');
-    const rings = titleScreen.querySelector('.cyber-lock');
-    const shackle = document.getElementById('shackle');
+  // 1. Decrypt Animation Phase
+  const textEl = titleScreen.querySelector('h1');
+  const subTextEl = titleScreen.querySelector('.press-start');
+  const rings = titleScreen.querySelector('.cyber-lock');
+  const shackle = document.getElementById('shackle');
 
-    subTextEl.style.animation = 'none'; // stop blinking
-    subTextEl.textContent = '[ DECRYPTING... ]';
-    subTextEl.style.color = 'var(--gold)';
-    rings.style.animationDuration = '1s'; // spin faster
+  subTextEl.style.animation = 'none'; // stop blinking
+  subTextEl.textContent = '[ DECRYPTING... ]';
+  subTextEl.style.color = 'var(--gold)';
+  rings.style.animationDuration = '1s'; // spin faster
+  
+  // Matrix text effect on title
+  const originalText = 'UNLOCK PROFILE';
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*';
+  let decryptInterval = setInterval(() => {
+    textEl.textContent = originalText.split('').map(c => c === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)]).join('');
+  }, 50);
+
+  // 2. Unlock & Transition Phase
+  setTimeout(() => {
+    clearInterval(decryptInterval);
+    textEl.textContent = 'ACCESS GRANTED';
+    textEl.style.color = '#41f28b'; // green
+    subTextEl.textContent = '[ SYSTEM UNLOCKED ]';
+    subTextEl.style.color = '#41f28b';
     
-    // Matrix text effect on title
-    const originalText = 'UNLOCK PROFILE';
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*';
-    let tick = 0;
-    let decryptInterval = setInterval(() => {
-      textEl.textContent = originalText.split('').map(c => c === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)]).join('');
-      if (tick % 4 === 0) playSound('decrypt');
-      tick++;
-    }, 50);
+    if (shackle) {
+      shackle.style.transform = 'translateY(-15px)';
+    }
+    
+    playSound('start'); // Play sound only when unlocked
 
-    // 2. Unlock & Transition Phase
     setTimeout(() => {
-      clearInterval(decryptInterval);
-      textEl.textContent = 'ACCESS GRANTED';
-      textEl.style.color = '#41f28b'; // green
-      subTextEl.textContent = '[ SYSTEM UNLOCKED ]';
-      subTextEl.style.color = '#41f28b';
-      
-      if (shackle) {
-        shackle.style.transform = 'translateY(-15px)';
-      }
-      
-      playSound('start');
-
+      titleScreen.classList.add('hidden');
       setTimeout(() => {
-        titleScreen.classList.add('hidden');
-        setTimeout(() => {
-          titleScreen.style.display = 'none';
-          appContent.style.display = 'block';
-          initScrollEffects();
-        }, 1000);
+        titleScreen.style.display = 'none';
+        appContent.style.display = 'block';
+        initScrollEffects();
       }, 1000);
-    }, 2000);
-  });
+    }, 1000);
+  }, 2000);
 
   // CRT Toggle
   const crtToggle = document.getElementById('crt-toggle');

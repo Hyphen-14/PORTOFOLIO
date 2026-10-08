@@ -24,15 +24,23 @@ export const portfolioData = {
       location: "Cianjur",
       role: "SDC Program Educator & Co-founder",
       year: "2026",
-      image: "",
+      image: "/assets/experience/yayasan.jpg",
       description: "Co-founded and developed the Student Development Club (SDC), an extracurricular program designed to help students discover and hone practical skills specific to their fields of interest. Formulated the curriculum and learning systems to foster student achievement and technological literacy. Taught and mentored students in technology."
+    },
+    {
+      organization: "Rework Academy",
+      location: "Online",
+      role: "Cyber Security Trainee",
+      year: "2026",
+      image: "/assets/experience/rework.jpg",
+      description: "Completed an intensive Cyber Security Bootcamp focusing on Red Teaming, Vulnerability Assessment, and SOC fundamentals. Gained hands-on experience in areas such as reconnaissance, API security, web exploitation (SQLi, XSS, RCE), SSRF, security monitoring, and bug bounty practices. Developed skills in pentest reporting and practical cybersecurity operations."
     },
     {
       organization: "Bina Nusantara Computer Club (BNCC)",
       location: "Binus University",
       role: "HRD Activist",
       year: "2024 - 2025",
-      image: "",
+      image: "/assets/experience/bncc.jpg",
       description: "Managed human resource activities, member engagement, and organizational development within the university's largest computer club."
     },
     {
@@ -99,19 +107,29 @@ export const portfolioData = {
       name: "QR-Phishing",
       description: "A proof-of-concept tool demonstrating the risks of malicious QR codes in phishing attacks.",
       tech: ["Python", "Cyber Security"],
-      link: "https://github.com/Hyphen-14"
-    },
-    {
-      name: "Chloris AI",
-      description: "An AI-powered application project.",
-      tech: ["Python", "AI"],
-      link: "https://github.com/Hyphen-14"
+      link: "https://github.com/Hyphen-14/QR-Phishing-Example-Generator-for-Scanner-App-Testing-/tree/main/scanner_helper_tool",
+      image: "/assets/projects/qr-phishing.png"
     },
     {
       name: "VOLO",
-      description: "A web application focusing on user productivity and management.",
+      description: "A comprehensive flight ticket booking application designed for seamless travel planning and management.",
       tech: ["Web Development", "JavaScript", "PHP"],
-      link: "https://github.com/Hyphen-14"
+      link: "https://github.com/Hyphen-14/VOLO",
+      image: "/assets/projects/volo.png"
+    },
+    {
+      name: "Chloris AI",
+      description: "An AI-powered diagnostic tool for detecting plant diseases and assessing plant health. Built with custom-trained data to provide accurate care recommendations and treatment solutions.",
+      tech: ["Python", "AI"],
+      link: "https://github.com/Hyphen-14/Chloris-ai",
+      image: "/assets/projects/chloris.png"
+    },
+    {
+      name: "NutriCare AI",
+      description: "An AI-powered application designed to help patients choose suitable meals and track their recovery progress. The app also connects patients directly with required specialist doctors.",
+      tech: ["AI", "Web Development"],
+      link: "https://github.com/Raynerqt/food-recomendation",
+      image: "/assets/projects/nutricare.png"
     }
   ],
   achievements: [
