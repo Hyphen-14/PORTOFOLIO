@@ -7,36 +7,36 @@
   --font-body: 'Fira Code', ui-monospace, monospace;
   --font-heading: 'Space Grotesk', system-ui, sans-serif;
 
-  --ink: #ffffff;
+  --ink: #e0e5ff;
   --muted: #8b9bb4;
   --gold: #fde06d;
   --crimson: #ff2a6d;
-  --neon: #05d9e8;
+  --neon: #00f0ff;
   --green: #01ffc3;
-  --magenta: #ff00ff;
+  --magenta: #b026ff;
 
-  --bg: #050a1f;
-  --bg-pattern: rgba(5, 217, 232, 0.05);
-  --win-top: rgba(20, 15, 45, 0.85);
-  --win-bot: rgba(5, 10, 31, 0.92);
-  --win-border: var(--neon);
+  --bg: #0a0b10;
+  --bg-pattern: rgba(0, 240, 255, 0.03);
+  --win-top: rgba(10, 15, 30, 0.85);
+  --win-bot: rgba(5, 8, 20, 0.92);
+  --win-border: rgba(0, 240, 255, 0.2);
   --win-shadow: rgba(0, 0, 0, 0.8);
-  --accent: var(--magenta);
-  --glow: 0 0 15px rgba(5, 217, 232, 0.6);
+  --accent: var(--neon);
+  --glow: 0 0 15px rgba(0, 240, 255, 0.2);
 
   --hud-h: 60px;
-  --radius: 4px;
+  --radius: 8px;
   color-scheme: dark;
 }
 
 :root[data-time='night'] {
   --bg: #07080f;
-  --bg-pattern: rgba(56, 232, 255, 0.04);
-  --win-top: #151b3d;
-  --win-bot: #070a1a;
-  --win-border: #38e8ff;
+  --bg-pattern: rgba(0, 240, 255, 0.02);
+  --win-top: #0a0e1c;
+  --win-bot: #050711;
+  --win-border: rgba(0, 240, 255, 0.15);
   --accent: var(--neon);
-  --glow: 0 0 12px rgba(56, 232, 255, 0.35);
+  --glow: 0 0 12px rgba(0, 240, 255, 0.15);
 }
 
 *,
@@ -145,19 +145,15 @@ a {
   top: 12px;
 }
 
-/* ---------- RPG window (Final Fantasy style) ---------- */
+/* ---------- Sci-Fi Window (Modern Glass) ---------- */
 .rpg-window {
   position: relative;
-  background: linear-gradient(135deg, rgba(5, 217, 232, 0.08), rgba(20, 15, 45, 0.65));
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(5, 217, 232, 0.4);
-  border-top: 3px solid var(--neon);
-  border-bottom: 3px solid var(--magenta);
-  border-radius: 0;
-  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
-  box-shadow:
-    inset 0 0 20px rgba(5, 217, 232, 0.05),
-    var(--glow);
+  background: linear-gradient(135deg, rgba(10, 15, 30, 0.6), rgba(5, 8, 20, 0.8));
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--win-border);
+  border-top: 2px solid var(--neon);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 240, 255, 0.05);
   transition: all 0.3s ease;
 }
 
@@ -422,4 +418,38 @@ a {
   .hud-bars {
     display: none;
   }
+}
+
+/* ---------- Modern Scroll Animations ---------- */
+.reveal-pop {
+  opacity: 0;
+  transform: scale(0.8) translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: opacity, transform;
+}
+.reveal-pop.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }

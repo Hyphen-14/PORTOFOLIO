@@ -20,12 +20,28 @@ export const portfolioData = {
   ],
   experience: [
     {
+      organization: "Bina Nusantara (Binus) University",
+      location: "Jakarta",
+      role: "Computer Science Student (Cyber Security)",
+      year: "2024 - Present",
+      image: "/assets/experience/binus_student.jpg",
+      description: "Currently pursuing a Bachelor's degree in Computer Science with a streaming focus on Cyber Security. Actively developing skills in secure software architecture, network defense, and system vulnerabilities."
+    },
+    {
       organization: "Yayasan SMK Swasta Mandiri Bersemi",
       location: "Cianjur",
       role: "SDC Program Educator & Co-founder",
       year: "2026",
       image: "/assets/experience/yayasan.jpg",
       description: "Co-founded and developed the Student Development Club (SDC), an extracurricular program designed to help students discover and hone practical skills specific to their fields of interest. Formulated the curriculum and learning systems to foster student achievement and technological literacy. Taught and mentored students in technology."
+    },
+    {
+      organization: "Binus University",
+      location: "Jakarta",
+      role: "1st Place - Business Competition",
+      year: "2025",
+      image: "/assets/experience/business_plan.jpg",
+      description: "Won first place in the university-wide business competition, demonstrating strong entrepreneurial and strategic planning skills."
     },
     {
       organization: "Rework Academy",
@@ -36,20 +52,20 @@ export const portfolioData = {
       description: "Completed an intensive Cyber Security Bootcamp focusing on Red Teaming, Vulnerability Assessment, and SOC fundamentals. Gained hands-on experience in areas such as reconnaissance, API security, web exploitation (SQLi, XSS, RCE), SSRF, security monitoring, and bug bounty practices. Developed skills in pentest reporting and practical cybersecurity operations."
     },
     {
-      organization: "Bina Nusantara Computer Club (BNCC)",
-      location: "Binus University",
-      role: "HRD Activist",
-      year: "2024 - 2025",
-      image: "/assets/experience/bncc.jpg",
-      description: "Managed human resource activities, member engagement, and organizational development within the university's largest computer club."
+      organization: "Timedoor Academy",
+      location: "Online",
+      role: "JavaScript & Game Dev Student",
+      year: "2023",
+      image: "/assets/experience/timedoor.png",
+      description: "Participated in coding classes focusing on JavaScript and Game Development. Applied programming logic, conditional loops, and JS methods to build mini-projects and case studies."
     },
     {
-      organization: "Binus University",
-      location: "Jakarta",
-      role: "1st Place - Business Competition",
+      organization: "Coding Studio",
+      location: "Online",
+      role: "Cyber Security & IT Student",
       year: "2025",
-      image: "",
-      description: "Won first place in the university-wide business competition, demonstrating strong entrepreneurial and strategic planning skills."
+      image: "/assets/experience/coding_studio.png",
+      description: "Completed comprehensive online courses covering Fundamental Cyber Security, Linux Command Line, Computer Networking, and Algorithms, building a strong foundation in information technology and security."
     }
   ],
   certifications: [
@@ -94,6 +110,20 @@ export const portfolioData = {
       date: "Aug 2026 – Oct 2026",
       note: "(Completed, Certificate Pending)",
       description: "Intensive training program focused on practical penetration testing and vulnerability assessment."
+    },
+    {
+      title: "Technology Project Member (TPM) - Back-End",
+      issuer: "BNCC x Traveloka",
+      date: "2024",
+      image: "/assets/certs/tpm.jpg",
+      description: "Participated as a Backend Developer utilizing the Laravel framework for a web project sponsored by Traveloka."
+    },
+    {
+      title: "Python Course",
+      issuer: "Kaggle",
+      date: "August 2026",
+      image: "/assets/certs/kaggle.png",
+      description: "Successfully completed the Python course on Kaggle, mastering core programming concepts and logic."
     }
   ],
   skills: {
