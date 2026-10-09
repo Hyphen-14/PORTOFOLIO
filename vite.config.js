@@ -1,2 +1,2 @@
-﻿import { defineConfig } from 'vite';
-export default defineConfig({ base: '/PORTOFOLIO---Yasin-Taryaqil-Aghyar/' });
+import { defineConfig } from 'vite';
+export default defineConfig({ base: '/PORTOFOLIO/' });

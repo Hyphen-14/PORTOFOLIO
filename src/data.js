@@ -1,4 +1,4 @@
-﻿export const portfolioData = {
+export const portfolioData = {
   profile: {
     name: "Yasin Taryaqil Aghyar",
     title: "Computer Science Student & Cyber Security Enthusiast",
@@ -69,6 +69,20 @@
     }
   ],
   certifications: [
+    {
+      title: "Evaluating Real-World QR Code Scanner in Detecting Quishing",
+      issuer: "ICORIS (IEEE)",
+      date: "September 2026",
+      image: import.meta.env.BASE_URL + "assets/certs/icoris.png",
+      description: "Published and presented a comparative empirical security study as an Author at the 8th International Conference on Cybernetics and Intelligent Systems (ICORIS)."
+    },
+    {
+      title: "Capture The Flag Participant",
+      issuer: "COMPFEST 17",
+      date: "2026",
+      image: import.meta.env.BASE_URL + "assets/certs/compfest.png",
+      description: "Participated in the Capture The Flag (CTF) cybersecurity competition at COMPFEST 17."
+    },
     {
       title: "Teaching & Educational Contribution",
       issuer: "Yayasan Mandiri Bersemi",
