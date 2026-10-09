@@ -1,4 +1,4 @@
-﻿import { portfolioData } from '../data.js';
+import { portfolioData } from '../data.js';
 
 export function renderSections() {
   renderAbout();
@@ -1273,7 +1273,7 @@ function renderContact() {
             <div class="term-dots"><span></span><span></span><span></span></div>
             <div class="term-title">root@yasin_ta:~/secure_drop#</div>
           </div>
-          <form class="term-body" onsubmit="event.preventDefault(); alert('Transmission sequence initiated. (Demo Only)');">
+          <form class="term-body" onsubmit="event.preventDefault(); const n = this.querySelectorAll('input')[0].value; const e = this.querySelectorAll('input')[1].value; const m = this.querySelector('textarea').value; const bodyText = 'From: ' + n + '%0D%0AEmail: ' + e + '%0D%0A%0D%0A' + m; window.location.href = 'mailto:yasintaryaqil@gmail.com,yasin.aghyar@binus.ac.id?subject=Portofolio Contact - ' + encodeURIComponent(n) + '&body=' + encodeURIComponent(bodyText).replace(/%250D%250A/g, '%0D%0A');">
             <div class="term-group">
               <label>> Name</label>
               <input type="text" placeholder="Enter your name..." required>
