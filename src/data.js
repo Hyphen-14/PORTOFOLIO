@@ -1,4 +1,4 @@
-export const portfolioData = {
+﻿export const portfolioData = {
   profile: {
     name: "Yasin Taryaqil Aghyar",
     title: "Computer Science Student & Cyber Security Enthusiast",
@@ -24,7 +24,7 @@ export const portfolioData = {
       location: "Jakarta",
       role: "Computer Science Student (Cyber Security)",
       year: "2024 - Present",
-      image: "/assets/experience/binus_student.jpg",
+      image: import.meta.env.BASE_URL + "assets/experience/binus_student.jpg",
       description: "Currently pursuing a Bachelor's degree in Computer Science with a streaming focus on Cyber Security. Actively developing skills in secure software architecture, network defense, and system vulnerabilities."
     },
     {
@@ -32,7 +32,7 @@ export const portfolioData = {
       location: "Cianjur",
       role: "SDC Program Educator & Co-founder",
       year: "2026",
-      image: "/assets/experience/yayasan.jpg",
+      image: import.meta.env.BASE_URL + "assets/experience/yayasan.jpg",
       description: "Co-founded and developed the Student Development Club (SDC), an extracurricular program designed to help students discover and hone practical skills specific to their fields of interest. Formulated the curriculum and learning systems to foster student achievement and technological literacy. Taught and mentored students in technology."
     },
     {
@@ -40,7 +40,7 @@ export const portfolioData = {
       location: "Jakarta",
       role: "1st Place - Business Competition",
       year: "2025",
-      image: "/assets/experience/business_plan.jpg",
+      image: import.meta.env.BASE_URL + "assets/experience/business_plan.jpg",
       description: "Won first place in the university-wide business competition, demonstrating strong entrepreneurial and strategic planning skills."
     },
     {
@@ -48,7 +48,7 @@ export const portfolioData = {
       location: "Online",
       role: "Cyber Security Trainee",
       year: "2026",
-      image: "/assets/experience/rework.jpg",
+      image: import.meta.env.BASE_URL + "assets/experience/rework.jpg",
       description: "Completed an intensive Cyber Security Bootcamp focusing on Red Teaming, Vulnerability Assessment, and SOC fundamentals. Gained hands-on experience in areas such as reconnaissance, API security, web exploitation (SQLi, XSS, RCE), SSRF, security monitoring, and bug bounty practices. Developed skills in pentest reporting and practical cybersecurity operations."
     },
     {
@@ -56,7 +56,7 @@ export const portfolioData = {
       location: "Online",
       role: "JavaScript & Game Dev Student",
       year: "2023",
-      image: "/assets/experience/timedoor.png",
+      image: import.meta.env.BASE_URL + "assets/experience/timedoor.png",
       description: "Participated in coding classes focusing on JavaScript and Game Development. Applied programming logic, conditional loops, and JS methods to build mini-projects and case studies."
     },
     {
@@ -64,7 +64,7 @@ export const portfolioData = {
       location: "Online",
       role: "Cyber Security & IT Student",
       year: "2025",
-      image: "/assets/experience/coding_studio.png",
+      image: import.meta.env.BASE_URL + "assets/experience/coding_studio.png",
       description: "Completed comprehensive online courses covering Fundamental Cyber Security, Linux Command Line, Computer Networking, and Algorithms, building a strong foundation in information technology and security."
     }
   ],
@@ -73,35 +73,35 @@ export const portfolioData = {
       title: "Teaching & Educational Contribution",
       issuer: "Yayasan Mandiri Bersemi",
       date: "2026",
-      image: "/assets/certs/cert-teaching.png",
+      image: import.meta.env.BASE_URL + "assets/certs/cert-teaching.png",
       description: "Recognized for contributions as a Mentor & Instructor in the Student Development Club (SDC)."
     },
     {
       title: "Fundamental Cyber Security",
       issuer: "Coding Studio",
       date: "August 2025",
-      image: "/assets/certs/cert-cybersecurity.png",
+      image: import.meta.env.BASE_URL + "assets/certs/cert-cybersecurity.png",
       description: "Successfully completed the Fundamental Cyber Security online course, learning the core concepts of information security."
     },
     {
       title: "Fundamental Command Linux",
       issuer: "Coding Studio",
       date: "July 2025",
-      image: "/assets/certs/cert-linux.png",
+      image: import.meta.env.BASE_URL + "assets/certs/cert-linux.png",
       description: "Mastered fundamental Linux command-line operations essential for system administration and penetration testing."
     },
     {
       title: "Fundamental Jaringan Komputer",
       issuer: "Coding Studio",
       date: "May 2025",
-      image: "/assets/certs/cert-jaringan.png",
+      image: import.meta.env.BASE_URL + "assets/certs/cert-jaringan.png",
       description: "Gained a solid understanding of computer networking principles, protocols, and architecture."
     },
     {
       title: "Fundamental Algoritma",
       issuer: "Coding Studio",
       date: "May 2025",
-      image: "/assets/certs/cert-algoritma.png",
+      image: import.meta.env.BASE_URL + "assets/certs/cert-algoritma.png",
       description: "Developed strong foundational skills in programming logic, algorithms, and problem-solving techniques."
     },
     {
@@ -115,14 +115,14 @@ export const portfolioData = {
       title: "Technology Project Member (TPM) - Back-End",
       issuer: "BNCC x Traveloka",
       date: "2024",
-      image: "/assets/certs/tpm.jpg",
+      image: import.meta.env.BASE_URL + "assets/certs/tpm.jpg",
       description: "Participated as a Backend Developer utilizing the Laravel framework for a web project sponsored by Traveloka."
     },
     {
       title: "Python Course",
       issuer: "Kaggle",
       date: "August 2026",
-      image: "/assets/certs/kaggle.png",
+      image: import.meta.env.BASE_URL + "assets/certs/kaggle.png",
       description: "Successfully completed the Python course on Kaggle, mastering core programming concepts and logic."
     }
   ],
@@ -138,28 +138,28 @@ export const portfolioData = {
       description: "A proof-of-concept tool demonstrating the risks of malicious QR codes in phishing attacks.",
       tech: ["Python", "Cyber Security"],
       link: "https://github.com/Hyphen-14/QR-Phishing-Example-Generator-for-Scanner-App-Testing-/tree/main/scanner_helper_tool",
-      image: "/assets/projects/qr-phishing.png"
+      image: import.meta.env.BASE_URL + "assets/projects/qr-phishing.png"
     },
     {
       name: "VOLO",
       description: "A comprehensive flight ticket booking application designed for seamless travel planning and management.",
       tech: ["Web Development", "JavaScript", "PHP"],
       link: "https://github.com/Hyphen-14/VOLO",
-      image: "/assets/projects/volo.png"
+      image: import.meta.env.BASE_URL + "assets/projects/volo.png"
     },
     {
       name: "Chloris AI",
       description: "An AI-powered diagnostic tool for detecting plant diseases and assessing plant health. Built with custom-trained data to provide accurate care recommendations and treatment solutions.",
       tech: ["Python", "AI"],
       link: "https://github.com/Hyphen-14/Chloris-ai",
-      image: "/assets/projects/chloris.png"
+      image: import.meta.env.BASE_URL + "assets/projects/chloris.png"
     },
     {
       name: "NutriCare AI",
       description: "An AI-powered application designed to help patients choose suitable meals and track their recovery progress. The app also connects patients directly with required specialist doctors.",
       tech: ["AI", "Web Development"],
       link: "https://github.com/Raynerqt/food-recomendation",
-      image: "/assets/projects/nutricare.png"
+      image: import.meta.env.BASE_URL + "assets/projects/nutricare.png"
     }
   ],
   achievements: [

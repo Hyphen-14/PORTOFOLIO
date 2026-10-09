@@ -1,4 +1,4 @@
-import { portfolioData } from '../data.js';
+﻿import { portfolioData } from '../data.js';
 
 export function renderSections() {
   renderAbout();
@@ -301,7 +301,7 @@ function renderAbout() {
       <div class="neon-glow-circle"></div>
       
       <!-- Hero Photo -->
-      <img src="/assets/profile-hero.png" class="neon-hero-img hero-entry" style="animation-delay: 0.3s;" alt="Yasin Aghyar" />
+      <img src="${import.meta.env.BASE_URL}assets/profile-hero.png" class="neon-hero-img hero-entry" style="animation-delay: 0.3s;" alt="Yasin Aghyar" />
       
       <!-- Top Bar -->
       <div class="neon-top-bar hero-entry-left" style="animation-delay: 0.4s;">
@@ -327,7 +327,7 @@ function renderAbout() {
             ${shortSummary}
           </div>
           <div class="neon-buttons">
-            <a href="/assets/cv.pdf" target="_blank" class="neon-btn-primary">
+            <a href="${import.meta.env.BASE_URL}assets/cv.pdf" target="_blank" class="neon-btn-primary">
               <span class="neon-btn-icon">&rarr;</span> DOWNLOAD CV
             </a>
             <button class="neon-btn-text" id="open-dossier-btn">[ READ DOSSIER ]</button>
