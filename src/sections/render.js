@@ -570,24 +570,71 @@ function renderProjects() {
   const container = document.getElementById('projects');
   if (!container) return;
 
-  const projData = portfolioData.projects;
-
-  const listHtml = projData.map((proj, index) => {
-    return `
-      <div class="proj-item ${index === 0 ? 'active' : ''}" data-index="${index}">
-        <span class="proj-name">> ${proj.name}</span>
-        <span class="proj-tech-mini">${proj.tech.slice(0,2).join(', ')}</span>
-      </div>
-    `;
-  }).join('');
+  const categories = [
+    { id: 'All', label: 'ALL PROJECTS' },
+    { id: 'Cyber Security', label: 'CYBER SECURITY' },
+    { id: 'Web Development', label: 'WEB DEVELOPMENT' },
+    { id: 'AI & Machine Learning', label: 'AI & MACHINE LEARNING' }
+  ];
 
   container.innerHTML = `
     <style>
+      .proj-filter-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin: 20px auto 35px auto;
+        flex-wrap: wrap;
+        max-width: 900px;
+      }
+      .proj-filter-btn {
+        background: rgba(5, 10, 25, 0.7);
+        border: 1px solid rgba(0, 240, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .proj-filter-btn:hover {
+        border-color: var(--neon);
+        color: #fff;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        transform: translateY(-2px);
+      }
+      .proj-filter-btn.active {
+        background: rgba(0, 240, 255, 0.15);
+        border-color: var(--neon);
+        color: var(--neon);
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.35), inset 0 0 10px rgba(0, 240, 255, 0.2);
+        transform: translateY(-2px);
+      }
+      .proj-filter-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--magenta);
+        transition: all 0.3s;
+      }
+      .proj-filter-btn.active .proj-filter-dot {
+        background: var(--neon);
+        box-shadow: 0 0 8px var(--neon);
+      }
+
       .proj-container {
         display: flex;
         gap: 30px;
         max-width: 1100px;
-        margin: 40px auto;
+        margin: 20px auto 40px auto;
         min-height: 500px;
         font-family: 'Space Grotesk', sans-serif;
       }
@@ -701,35 +748,49 @@ function renderProjects() {
         <h2 class="section-title" style="color: #fff; font-family: 'Space Grotesk', sans-serif;">PROJECTS</h2>
         <span class="section-kicker">PORTFOLIO</span>
       </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="proj-filter-bar reveal-pop">
+        ${categories.map((cat, idx) => `
+          <button class="proj-filter-btn ${idx === 0 ? 'active' : ''}" data-filter="${cat.id}">
+            <span class="proj-filter-dot"></span> [ ${cat.label} ]
+          </button>
+        `).join('')}
+      </div>
       
       <div class="proj-container reveal-pop">
-        <div class="proj-list-panel">
-          ${listHtml}
+        <div class="proj-list-panel" id="proj-list-container">
+          <!-- Rendered dynamically -->
         </div>
         
         <div class="proj-dossier-panel" id="proj-dossier-view">
-          <!-- Rendered via JS -->
+          <!-- Rendered dynamically -->
         </div>
       </div>
     </div>
   `;
 
   setTimeout(() => {
-    const items = document.querySelectorAll('.proj-item');
+    const listPanel = document.getElementById('proj-list-container');
     const dossierView = document.getElementById('proj-dossier-view');
-    if(!items.length || !dossierView) return;
-    
+    const filterButtons = container.querySelectorAll('.proj-filter-btn');
+    if (!listPanel || !dossierView) return;
+
     let activeIndex = -1;
-    
-    const updateDossier = (index) => {
-      if(activeIndex === index) return;
+    let currentProjectsRef = null;
+
+    const updateDossier = (projects, index, force = false) => {
+      if (!force && activeIndex === index && currentProjectsRef === projects) return;
       activeIndex = index;
-      
-      const proj = portfolioData.projects[index];
-      
+      currentProjectsRef = projects;
+
+      const proj = projects[index];
+      if (!proj) return;
+
+      const items = listPanel.querySelectorAll('.proj-item');
       items.forEach(el => el.classList.remove('active'));
-      items[index].classList.add('active');
-      
+      if (items[index]) items[index].classList.add('active');
+
       const imageHtml = proj.image 
         ? '<img src="' + proj.image + '" alt="' + proj.name + '" loading="lazy">' 
         : '<div class="proj-no-image">NO IMAGE DATA</div>';
@@ -759,12 +820,60 @@ function renderProjects() {
       dossierView.offsetHeight; /* trigger reflow */
       dossierView.style.animation = 'hero-fade-in 0.3s ease-out backwards';
     };
-    
-    updateDossier(0);
-    
-    items.forEach((item, idx) => {
-      item.addEventListener('mouseenter', () => updateDossier(idx)); // Hover to trigger
+
+    const renderList = (projects) => {
+      if (projects.length === 0) {
+        listPanel.innerHTML = `
+          <div style="padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; font-family: 'Space Grotesk', sans-serif;">
+            // NO PROJECTS IN THIS CATEGORY
+          </div>
+        `;
+        dossierView.innerHTML = `
+          <div class="proj-no-image" style="height: 350px;">NO DATA SELECTED</div>
+        `;
+        return;
+      }
+
+      listPanel.innerHTML = projects.map((proj, index) => {
+        return `
+          <div class="proj-item ${index === 0 ? 'active' : ''}" data-index="${index}">
+            <span class="proj-name">> ${proj.name}</span>
+            <span class="proj-tech-mini">${proj.tech.slice(0,2).join(', ')}</span>
+          </div>
+        `;
+      }).join('');
+
+      const items = listPanel.querySelectorAll('.proj-item');
+      items.forEach((item, idx) => {
+        item.addEventListener('mouseenter', () => updateDossier(projects, idx));
+        item.addEventListener('click', () => updateDossier(projects, idx));
+      });
+
+      updateDossier(projects, 0, true);
+    };
+
+    // Filter event listeners
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        const filtered = filter === 'All'
+          ? portfolioData.projects
+          : portfolioData.projects.filter(p => {
+              if (Array.isArray(p.category)) {
+                return p.category.includes(filter);
+              }
+              return p.category === filter;
+            });
+
+        renderList(filtered);
+      });
     });
+
+    // Initial render with All projects
+    renderList(portfolioData.projects);
   }, 0);
 }
 

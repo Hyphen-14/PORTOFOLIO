@@ -148,7 +148,16 @@ export const portfolioData = {
   },
   projects: [
     {
+      name: "OWASP Juice Shop Security Audit",
+      category: "Cyber Security",
+      description: "Comprehensive security audit and penetration testing on OWASP Juice Shop. Performed reconnaissance, client-side Angular code inspection (bypassing sanitization), attack surface sequence modeling, and Proof of Concept (PoC) DOM XSS / injection exploitation.",
+      tech: ["Cyber Security", "Penetration Testing", "Angular", "Web Security"],
+      link: "https://github.com/Hyphen-14/owasp-juice-shop-security-audit",
+      image: import.meta.env.BASE_URL + "assets/projects/owasp-juice-shop.png"
+    },
+    {
       name: "QR-Phishing",
+      category: "Cyber Security",
       description: "A proof-of-concept tool demonstrating the risks of malicious QR codes in phishing attacks.",
       tech: ["Python", "Cyber Security"],
       link: "https://github.com/Hyphen-14/QR-Phishing-Example-Generator-for-Scanner-App-Testing-/tree/main/scanner_helper_tool",
@@ -156,6 +165,7 @@ export const portfolioData = {
     },
     {
       name: "VOLO",
+      category: "Web Development",
       description: "A comprehensive flight ticket booking application designed for seamless travel planning and management.",
       tech: ["Web Development", "JavaScript", "PHP"],
       link: "https://github.com/Hyphen-14/VOLO",
@@ -163,6 +173,7 @@ export const portfolioData = {
     },
     {
       name: "Chloris AI",
+      category: "AI & Machine Learning",
       description: "An AI-powered diagnostic tool for detecting plant diseases and assessing plant health. Built with custom-trained data to provide accurate care recommendations and treatment solutions.",
       tech: ["Python", "AI"],
       link: "https://github.com/Hyphen-14/Chloris-ai",
@@ -170,6 +181,7 @@ export const portfolioData = {
     },
     {
       name: "NutriCare AI",
+      category: ["AI & Machine Learning", "Web Development"],
       description: "An AI-powered application designed to help patients choose suitable meals and track their recovery progress. The app also connects patients directly with required specialist doctors.",
       tech: ["AI", "Web Development"],
       link: "https://github.com/Raynerqt/food-recomendation",
