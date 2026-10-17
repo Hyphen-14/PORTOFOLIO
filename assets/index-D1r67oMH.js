@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))n(o);new MutationObserver(o=>{for(const a of o)if(a.type==="childList")for(const d of a.addedNodes)d.tagName==="LINK"&&d.rel==="modulepreload"&&n(d)}).observe(document,{childList:!0,subtree:!0});function t(o){const a={};return o.integrity&&(a.integrity=o.integrity),o.referrerPolicy&&(a.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?a.credentials="include":o.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function n(o){if(o.ep)return;o.ep=!0;const a=t(o);fetch(o.href,a)}})();const u={profile:{summary:"Computer Science student at Binus University with a strong focus on Cyber Security, Networking, and Software Development. Highly passionate about penetration testing, vulnerability assessment, and building secure systems. Equipped with practical knowledge from intensive cybersecurity bootcamps and proven leadership experience in developing technology-focused educational programs. Actively seeking an IT internship to apply technical skills in a dynamic professional environment.",linkedin:"https://www.linkedin.com/in/yasin-taryaqil-aghyar-3a9174326/",github:"https://github.com/Hyphen-14"},experience:[{organization:"Bina Nusantara (Binus) University",location:"Jakarta",role:"Computer Science Student (Cyber Security)",year:"2024 - Present",image:"/PORTOFOLIO/assets/experience/binus_student.jpg",description:"Currently pursuing a Bachelor's degree in Computer Science with a streaming focus on Cyber Security. Actively developing skills in secure software architecture, network defense, and system vulnerabilities."},{organization:"Yayasan SMK Swasta Mandiri Bersemi",location:"Cianjur",role:"SDC Program Educator & Co-founder",year:"2026",image:"/PORTOFOLIO/assets/experience/yayasan.jpg",description:"Co-founded and developed the Student Development Club (SDC), an extracurricular program designed to help students discover and hone practical skills specific to their fields of interest. Formulated the curriculum and learning systems to foster student achievement and technological literacy. Taught and mentored students in technology."},{organization:"Binus University",location:"Jakarta",role:"1st Place - Business Competition",year:"2025",image:"/PORTOFOLIO/assets/experience/business_plan.jpg",description:"Won first place in the university-wide business competition, demonstrating strong entrepreneurial and strategic planning skills."},{organization:"Rework Academy",location:"Online",role:"Cyber Security Trainee",year:"2026",image:"/PORTOFOLIO/assets/experience/rework.jpg",description:"Completed an intensive Cyber Security Bootcamp focusing on Red Teaming, Vulnerability Assessment, and SOC fundamentals. Gained hands-on experience in areas such as reconnaissance, API security, web exploitation (SQLi, XSS, RCE), SSRF, security monitoring, and bug bounty practices. Developed skills in pentest reporting and practical cybersecurity operations."},{organization:"Timedoor Academy",location:"Online",role:"JavaScript & Game Dev Student",year:"2023",image:"/PORTOFOLIO/assets/experience/timedoor.png",description:"Participated in coding classes focusing on JavaScript and Game Development. Applied programming logic, conditional loops, and JS methods to build mini-projects and case studies."},{organization:"Coding Studio",location:"Online",role:"Cyber Security & IT Student",year:"2025",image:"/PORTOFOLIO/assets/experience/coding_studio.png",description:"Completed comprehensive online courses covering Fundamental Cyber Security, Linux Command Line, Computer Networking, and Algorithms, building a strong foundation in information technology and security."}],certifications:[{title:"Evaluating Real-World QR Code Scanner in Detecting Quishing",issuer:"ICORIS (IEEE)",date:"September 2026",image:"/PORTOFOLIO/assets/certs/icoris.png",description:"Published and presented a comparative empirical security study as an Author at the 8th International Conference on Cybernetics and Intelligent Systems (ICORIS)."},{title:"Capture The Flag Participant",issuer:"COMPFEST 17",date:"2026",image:"/PORTOFOLIO/assets/certs/compfest.png",description:"Participated in the Capture The Flag (CTF) cybersecurity competition at COMPFEST 17."},{title:"Teaching & Educational Contribution",issuer:"Yayasan Mandiri Bersemi",date:"2026",image:"/PORTOFOLIO/assets/certs/cert-teaching.png",description:"Recognized for contributions as a Mentor & Instructor in the Student Development Club (SDC)."},{title:"Fundamental Cyber Security",issuer:"Coding Studio",date:"August 2025",image:"/PORTOFOLIO/assets/certs/cert-cybersecurity.png",description:"Successfully completed the Fundamental Cyber Security online course, learning the core concepts of information security."},{title:"Fundamental Command Linux",issuer:"Coding Studio",date:"July 2025",image:"/PORTOFOLIO/assets/certs/cert-linux.png",description:"Mastered fundamental Linux command-line operations essential for system administration and penetration testing."},{title:"Fundamental Jaringan Komputer",issuer:"Coding Studio",date:"May 2025",image:"/PORTOFOLIO/assets/certs/cert-jaringan.png",description:"Gained a solid understanding of computer networking principles, protocols, and architecture."},{title:"Fundamental Algoritma",issuer:"Coding Studio",date:"May 2025",image:"/PORTOFOLIO/assets/certs/cert-algoritma.png",description:"Developed strong foundational skills in programming logic, algorithms, and problem-solving techniques."},{title:"Cyber Security Bootcamp",issuer:"Rework Academy",date:"Aug 2026 – Oct 2026",note:"(Completed, Certificate Pending)",description:"Intensive training program focused on practical penetration testing and vulnerability assessment."},{title:"Technology Project Member (TPM) - Back-End",issuer:"BNCC x Traveloka",date:"2024",image:"/PORTOFOLIO/assets/certs/tpm.jpg",description:"Participated as a Backend Developer utilizing the Laravel framework for a web project sponsored by Traveloka."},{title:"Python Course",issuer:"Kaggle",date:"August 2026",image:"/PORTOFOLIO/assets/certs/kaggle.png",description:"Successfully completed the Python course on Kaggle, mastering core programming concepts and logic."}],skills:{"Cyber Security":["Penetration Testing","Red Teaming","Vulnerability Assessment","Web Exploitation (SQLi, XSS, RCE)","Incident Analysis","SOC Fundamentals"],Networking:["Network Traffic Analysis","Subnetting","Security Monitoring"],"Software Development":["C","C++","Java","Python","PHP","JavaScript","SQL","Web/Mobile App Architecture"],"Tools & OS":["Kali Linux","Burp Suite","Nmap","Ghidra","Wireshark","Docker","Git","VS Code"]},projects:[{name:"QR-Phishing",description:"A proof-of-concept tool demonstrating the risks of malicious QR codes in phishing attacks.",tech:["Python","Cyber Security"],link:"https://github.com/Hyphen-14/QR-Phishing-Example-Generator-for-Scanner-App-Testing-/tree/main/scanner_helper_tool",image:"/PORTOFOLIO/assets/projects/qr-phishing.png"},{name:"VOLO",description:"A comprehensive flight ticket booking application designed for seamless travel planning and management.",tech:["Web Development","JavaScript","PHP"],link:"https://github.com/Hyphen-14/VOLO",image:"/PORTOFOLIO/assets/projects/volo.png"},{name:"Chloris AI",description:"An AI-powered diagnostic tool for detecting plant diseases and assessing plant health. Built with custom-trained data to provide accurate care recommendations and treatment solutions.",tech:["Python","AI"],link:"https://github.com/Hyphen-14/Chloris-ai",image:"/PORTOFOLIO/assets/projects/chloris.png"},{name:"NutriCare AI",description:"An AI-powered application designed to help patients choose suitable meals and track their recovery progress. The app also connects patients directly with required specialist doctors.",tech:["AI","Web Development"],link:"https://github.com/Raynerqt/food-recomendation",image:"/PORTOFOLIO/assets/projects/nutricare.png"}]};function O(){C(),z(),A(),E(),I(),P()}function C(){const i=document.getElementById("about");if(!i)return;i.style.padding="0";const e="Passionate about penetration testing, identifying system vulnerabilities, and building robust, secure digital architectures.";i.innerHTML=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))n(o);new MutationObserver(o=>{for(const a of o)if(a.type==="childList")for(const g of a.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&n(g)}).observe(document,{childList:!0,subtree:!0});function e(o){const a={};return o.integrity&&(a.integrity=o.integrity),o.referrerPolicy&&(a.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?a.credentials="include":o.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function n(o){if(o.ep)return;o.ep=!0;const a=e(o);fetch(o.href,a)}})();const x={profile:{summary:"Computer Science student at Binus University with a strong focus on Cyber Security, Networking, and Software Development. Highly passionate about penetration testing, vulnerability assessment, and building secure systems. Equipped with practical knowledge from intensive cybersecurity bootcamps and proven leadership experience in developing technology-focused educational programs. Actively seeking an IT internship to apply technical skills in a dynamic professional environment.",linkedin:"https://www.linkedin.com/in/yasin-taryaqil-aghyar-3a9174326/",github:"https://github.com/Hyphen-14"},experience:[{organization:"Bina Nusantara (Binus) University",location:"Jakarta",role:"Computer Science Student (Cyber Security)",year:"2024 - Present",image:"/PORTOFOLIO/assets/experience/binus_student.jpg",description:"Currently pursuing a Bachelor's degree in Computer Science with a streaming focus on Cyber Security. Actively developing skills in secure software architecture, network defense, and system vulnerabilities."},{organization:"Yayasan SMK Swasta Mandiri Bersemi",location:"Cianjur",role:"SDC Program Educator & Co-founder",year:"2026",image:"/PORTOFOLIO/assets/experience/yayasan.jpg",description:"Co-founded and developed the Student Development Club (SDC), an extracurricular program designed to help students discover and hone practical skills specific to their fields of interest. Formulated the curriculum and learning systems to foster student achievement and technological literacy. Taught and mentored students in technology."},{organization:"Binus University",location:"Jakarta",role:"1st Place - Business Competition",year:"2025",image:"/PORTOFOLIO/assets/experience/business_plan.jpg",description:"Won first place in the university-wide business competition, demonstrating strong entrepreneurial and strategic planning skills."},{organization:"Rework Academy",location:"Online",role:"Cyber Security Trainee",year:"2026",image:"/PORTOFOLIO/assets/experience/rework.jpg",description:"Completed an intensive Cyber Security Bootcamp focusing on Red Teaming, Vulnerability Assessment, and SOC fundamentals. Gained hands-on experience in areas such as reconnaissance, API security, web exploitation (SQLi, XSS, RCE), SSRF, security monitoring, and bug bounty practices. Developed skills in pentest reporting and practical cybersecurity operations."},{organization:"Timedoor Academy",location:"Online",role:"JavaScript & Game Dev Student",year:"2023",image:"/PORTOFOLIO/assets/experience/timedoor.png",description:"Participated in coding classes focusing on JavaScript and Game Development. Applied programming logic, conditional loops, and JS methods to build mini-projects and case studies."},{organization:"Coding Studio",location:"Online",role:"Cyber Security & IT Student",year:"2025",image:"/PORTOFOLIO/assets/experience/coding_studio.png",description:"Completed comprehensive online courses covering Fundamental Cyber Security, Linux Command Line, Computer Networking, and Algorithms, building a strong foundation in information technology and security."}],certifications:[{title:"Evaluating Real-World QR Code Scanner in Detecting Quishing",issuer:"ICORIS (IEEE)",date:"September 2026",image:"/PORTOFOLIO/assets/certs/icoris.png",description:"Published and presented a comparative empirical security study as an Author at the 8th International Conference on Cybernetics and Intelligent Systems (ICORIS)."},{title:"Capture The Flag Participant",issuer:"COMPFEST 17",date:"2026",image:"/PORTOFOLIO/assets/certs/compfest.png",description:"Participated in the Capture The Flag (CTF) cybersecurity competition at COMPFEST 17."},{title:"Teaching & Educational Contribution",issuer:"Yayasan Mandiri Bersemi",date:"2026",image:"/PORTOFOLIO/assets/certs/cert-teaching.png",description:"Recognized for contributions as a Mentor & Instructor in the Student Development Club (SDC)."},{title:"Fundamental Cyber Security",issuer:"Coding Studio",date:"August 2025",image:"/PORTOFOLIO/assets/certs/cert-cybersecurity.png",description:"Successfully completed the Fundamental Cyber Security online course, learning the core concepts of information security."},{title:"Fundamental Command Linux",issuer:"Coding Studio",date:"July 2025",image:"/PORTOFOLIO/assets/certs/cert-linux.png",description:"Mastered fundamental Linux command-line operations essential for system administration and penetration testing."},{title:"Fundamental Jaringan Komputer",issuer:"Coding Studio",date:"May 2025",image:"/PORTOFOLIO/assets/certs/cert-jaringan.png",description:"Gained a solid understanding of computer networking principles, protocols, and architecture."},{title:"Fundamental Algoritma",issuer:"Coding Studio",date:"May 2025",image:"/PORTOFOLIO/assets/certs/cert-algoritma.png",description:"Developed strong foundational skills in programming logic, algorithms, and problem-solving techniques."},{title:"Cyber Security Bootcamp",issuer:"Rework Academy",date:"Aug 2026 – Oct 2026",note:"(Completed, Certificate Pending)",description:"Intensive training program focused on practical penetration testing and vulnerability assessment."},{title:"Technology Project Member (TPM) - Back-End",issuer:"BNCC x Traveloka",date:"2024",image:"/PORTOFOLIO/assets/certs/tpm.jpg",description:"Participated as a Backend Developer utilizing the Laravel framework for a web project sponsored by Traveloka."},{title:"Python Course",issuer:"Kaggle",date:"August 2026",image:"/PORTOFOLIO/assets/certs/kaggle.png",description:"Successfully completed the Python course on Kaggle, mastering core programming concepts and logic."}],skills:{"Cyber Security":["Penetration Testing","Red Teaming","Vulnerability Assessment","Web Exploitation (SQLi, XSS, RCE)","Incident Analysis","SOC Fundamentals"],Networking:["Network Traffic Analysis","Subnetting","Security Monitoring"],"Software Development":["C","C++","Java","Python","PHP","JavaScript","SQL","Web/Mobile App Architecture"],"Tools & OS":["Kali Linux","Burp Suite","Nmap","Ghidra","Wireshark","Docker","Git","VS Code"]},projects:[{name:"OWASP Juice Shop Security Audit",category:"Cyber Security",description:"Comprehensive security audit and penetration testing on OWASP Juice Shop. Performed reconnaissance, client-side Angular code inspection (bypassing sanitization), attack surface sequence modeling, and Proof of Concept (PoC) DOM XSS / injection exploitation.",tech:["Cyber Security","Penetration Testing","Angular","Web Security"],link:"https://github.com/Hyphen-14/owasp-juice-shop-security-audit",image:"/PORTOFOLIO/assets/projects/owasp-juice-shop.png"},{name:"QR-Phishing",category:"Cyber Security",description:"A proof-of-concept tool demonstrating the risks of malicious QR codes in phishing attacks.",tech:["Python","Cyber Security"],link:"https://github.com/Hyphen-14/QR-Phishing-Example-Generator-for-Scanner-App-Testing-/tree/main/scanner_helper_tool",image:"/PORTOFOLIO/assets/projects/qr-phishing.png"},{name:"VOLO",category:"Web Development",description:"A comprehensive flight ticket booking application designed for seamless travel planning and management.",tech:["Web Development","JavaScript","PHP"],link:"https://github.com/Hyphen-14/VOLO",image:"/PORTOFOLIO/assets/projects/volo.png"},{name:"Chloris AI",category:"AI & Machine Learning",description:"An AI-powered diagnostic tool for detecting plant diseases and assessing plant health. Built with custom-trained data to provide accurate care recommendations and treatment solutions.",tech:["Python","AI"],link:"https://github.com/Hyphen-14/Chloris-ai",image:"/PORTOFOLIO/assets/projects/chloris.png"},{name:"NutriCare AI",category:["AI & Machine Learning","Web Development"],description:"An AI-powered application designed to help patients choose suitable meals and track their recovery progress. The app also connects patients directly with required specialist doctors.",tech:["AI","Web Development"],link:"https://github.com/Raynerqt/food-recomendation",image:"/PORTOFOLIO/assets/projects/nutricare.png"}]};function O(){A(),C(),E(),z(),I(),P()}function A(){const i=document.getElementById("about");if(!i)return;i.style.padding="0";const t="Passionate about penetration testing, identifying system vulnerabilities, and building robust, secure digital architectures.";i.innerHTML=`
     <style>
       .neon-profile-container {
         position: relative;
@@ -306,7 +306,7 @@
           <div class="neon-subtitle">I design secure networks &</div>
           <div class="neon-title">CYBER<br>SECURITY</div>
           <div class="neon-desc">
-            ${e}
+            ${t}
           </div>
           <div class="neon-buttons">
             <a href="/PORTOFOLIO/assets/cv.pdf" target="_blank" class="neon-btn-primary">
@@ -367,11 +367,11 @@
         <button class="dossier-close" id="close-dossier-btn">&times;</button>
         <div class="dossier-content">
           <h2>FULL DOSSIER</h2>
-          <p>${u.profile.summary}</p>
+          <p>${x.profile.summary}</p>
         </div>
       </div>
     </div>
-  `,setTimeout(()=>{const t=document.getElementById("dossier-overlay"),n=document.getElementById("open-dossier-btn"),o=document.getElementById("close-dossier-btn");n&&t&&n.addEventListener("click",()=>t.style.display="block"),o&&t&&o.addEventListener("click",()=>t.style.display="none"),t&&t.addEventListener("click",a=>{a.target===t&&(t.style.display="none")})},0)}function z(){const i=document.getElementById("experience");if(!i)return;const e=u.experience.map((t,n)=>{const o=n%2===0,a=t.image?`<img src="${t.image}" alt="${t.organization}" class="z-exp-img" loading="lazy">`:'<div class="z-exp-no-image">NO IMAGE DATA</div>';return`
+  `,setTimeout(()=>{const e=document.getElementById("dossier-overlay"),n=document.getElementById("open-dossier-btn"),o=document.getElementById("close-dossier-btn");n&&e&&n.addEventListener("click",()=>e.style.display="block"),o&&e&&o.addEventListener("click",()=>e.style.display="none"),e&&e.addEventListener("click",a=>{a.target===e&&(e.style.display="none")})},0)}function C(){const i=document.getElementById("experience");if(!i)return;const t=x.experience.map((e,n)=>{const o=n%2===0,a=e.image?`<img src="${e.image}" alt="${e.organization}" class="z-exp-img" loading="lazy">`:'<div class="z-exp-no-image">NO IMAGE DATA</div>';return`
       <div class="z-exp-row ${o?"":"reverse"} reveal-pop" style="transition-delay: ${n*.1}s;">
         <div class="z-exp-image-wrapper">
           <div class="target-corner tl-tl"></div>
@@ -381,10 +381,10 @@
           ${a}
         </div>
         <div class="z-exp-content">
-          <div class="z-exp-year">[ ${t.year} ]</div>
-          <h3 class="z-exp-role">${t.role}</h3>
-          <div class="z-exp-org">${t.organization} <span class="z-exp-loc">// ${t.location}</span></div>
-          <p class="z-exp-desc">${t.description}</p>
+          <div class="z-exp-year">[ ${e.year} ]</div>
+          <h3 class="z-exp-role">${e.role}</h3>
+          <div class="z-exp-org">${e.organization} <span class="z-exp-loc">// ${e.location}</span></div>
+          <p class="z-exp-desc">${e.description}</p>
         </div>
       </div>
     `}).join("");i.innerHTML=`
@@ -508,21 +508,67 @@
       </div>
       
       <div class="z-exp-container">
-        ${e}
+        ${t}
       </div>
     </div>
-  `}function A(){const i=document.getElementById("projects");if(!i)return;const t=u.projects.map((n,o)=>`
-      <div class="proj-item ${o===0?"active":""}" data-index="${o}">
-        <span class="proj-name">> ${n.name}</span>
-        <span class="proj-tech-mini">${n.tech.slice(0,2).join(", ")}</span>
-      </div>
-    `).join("");i.innerHTML=`
+  `}function E(){const i=document.getElementById("projects");if(!i)return;const t=[{id:"All",label:"ALL PROJECTS"},{id:"Cyber Security",label:"CYBER SECURITY"},{id:"Web Development",label:"WEB DEVELOPMENT"},{id:"AI & Machine Learning",label:"AI & MACHINE LEARNING"}];i.innerHTML=`
     <style>
+      .proj-filter-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin: 20px auto 35px auto;
+        flex-wrap: wrap;
+        max-width: 900px;
+      }
+      .proj-filter-btn {
+        background: rgba(5, 10, 25, 0.7);
+        border: 1px solid rgba(0, 240, 255, 0.25);
+        color: rgba(255, 255, 255, 0.75);
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+      .proj-filter-btn:hover {
+        border-color: var(--neon);
+        color: #fff;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        transform: translateY(-2px);
+      }
+      .proj-filter-btn.active {
+        background: rgba(0, 240, 255, 0.15);
+        border-color: var(--neon);
+        color: var(--neon);
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.35), inset 0 0 10px rgba(0, 240, 255, 0.2);
+        transform: translateY(-2px);
+      }
+      .proj-filter-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--magenta);
+        transition: all 0.3s;
+      }
+      .proj-filter-btn.active .proj-filter-dot {
+        background: var(--neon);
+        box-shadow: 0 0 8px var(--neon);
+      }
+
       .proj-container {
         display: flex;
         gap: 30px;
         max-width: 1100px;
-        margin: 40px auto;
+        margin: 20px auto 40px auto;
         min-height: 500px;
         font-family: 'Space Grotesk', sans-serif;
       }
@@ -636,35 +682,55 @@
         <h2 class="section-title" style="color: #fff; font-family: 'Space Grotesk', sans-serif;">PROJECTS</h2>
         <span class="section-kicker">PORTFOLIO</span>
       </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="proj-filter-bar reveal-pop">
+        ${t.map((e,n)=>`
+          <button class="proj-filter-btn ${n===0?"active":""}" data-filter="${e.id}">
+            <span class="proj-filter-dot"></span> [ ${e.label} ]
+          </button>
+        `).join("")}
+      </div>
       
       <div class="proj-container reveal-pop">
-        <div class="proj-list-panel">
-          ${t}
+        <div class="proj-list-panel" id="proj-list-container">
+          <!-- Rendered dynamically -->
         </div>
         
         <div class="proj-dossier-panel" id="proj-dossier-view">
-          <!-- Rendered via JS -->
+          <!-- Rendered dynamically -->
         </div>
       </div>
     </div>
-  `,setTimeout(()=>{const n=document.querySelectorAll(".proj-item"),o=document.getElementById("proj-dossier-view");if(!n.length||!o)return;let a=-1;const d=l=>{if(a===l)return;a=l;const s=u.projects[l];n.forEach(r=>r.classList.remove("active")),n[l].classList.add("active");const p=s.image?'<img src="'+s.image+'" alt="'+s.name+'" loading="lazy">':'<div class="proj-no-image">NO IMAGE DATA</div>',c=s.tech.map(r=>"<span>"+r+"</span>").join("");o.innerHTML=`
+  `,setTimeout(()=>{const e=document.getElementById("proj-list-container"),n=document.getElementById("proj-dossier-view"),o=i.querySelectorAll(".proj-filter-btn");if(!e||!n)return;let a=-1,g=null;const p=(s,l,r=!1)=>{if(!r&&a===l&&g===s)return;a=l,g=s;const d=s[l];if(!d)return;const m=e.querySelectorAll(".proj-item");m.forEach(u=>u.classList.remove("active")),m[l]&&m[l].classList.add("active");const b=d.image?'<img src="'+d.image+'" alt="'+d.name+'" loading="lazy">':'<div class="proj-no-image">NO IMAGE DATA</div>',h=d.tech.map(u=>"<span>"+u+"</span>").join("");n.innerHTML=`
         <div class="proj-image-frame">
           <div class="proj-scanline"></div>
           <div class="target-corner tl-tl"></div>
           <div class="target-corner tl-tr"></div>
           <div class="target-corner tl-bl"></div>
           <div class="target-corner tl-br"></div>
-          ${p}
+          ${b}
         </div>
         <div class="proj-details">
           <div class="proj-title-row">
-            <div class="proj-org">${s.name}</div>
-            <a href="${s.link}" target="_blank" class="proj-link-btn">SOURCE CODE</a>
+            <div class="proj-org">${d.name}</div>
+            <a href="${d.link}" target="_blank" class="proj-link-btn">SOURCE CODE</a>
           </div>
-          <div class="proj-tech-tags">${c}</div>
-          <div class="proj-desc">${s.description}</div>
+          <div class="proj-tech-tags">${h}</div>
+          <div class="proj-desc">${d.description}</div>
         </div>
-      `,o.style.animation="none",o.offsetHeight,o.style.animation="hero-fade-in 0.3s ease-out backwards"};d(0),n.forEach((l,s)=>{l.addEventListener("mouseenter",()=>d(s))})},0)}function E(){const i=document.getElementById("certifications");if(!i)return;const e=u.certifications.map((t,n)=>`
+      `,n.style.animation="none",n.offsetHeight,n.style.animation="hero-fade-in 0.3s ease-out backwards"},c=s=>{if(s.length===0){e.innerHTML=`
+          <div style="padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; font-family: 'Space Grotesk', sans-serif;">
+            // NO PROJECTS IN THIS CATEGORY
+          </div>
+        `,n.innerHTML=`
+          <div class="proj-no-image" style="height: 350px;">NO DATA SELECTED</div>
+        `;return}e.innerHTML=s.map((r,d)=>`
+          <div class="proj-item ${d===0?"active":""}" data-index="${d}">
+            <span class="proj-name">> ${r.name}</span>
+            <span class="proj-tech-mini">${r.tech.slice(0,2).join(", ")}</span>
+          </div>
+        `).join(""),e.querySelectorAll(".proj-item").forEach((r,d)=>{r.addEventListener("mouseenter",()=>p(s,d)),r.addEventListener("click",()=>p(s,d))}),p(s,0,!0)};o.forEach(s=>{s.addEventListener("click",()=>{o.forEach(d=>d.classList.remove("active")),s.classList.add("active");const l=s.getAttribute("data-filter"),r=l==="All"?x.projects:x.projects.filter(d=>Array.isArray(d.category)?d.category.includes(l):d.category===l);c(r)})}),c(x.projects)},0)}function z(){const i=document.getElementById("certifications");if(!i)return;const t=x.certifications.map((e,n)=>`
       <div class="cert-orb-container reveal-pop" style="transition-delay: ${n*.1}s;">
         <!-- The Glowing Orb -->
         <div class="cert-orb">
@@ -672,20 +738,20 @@
           <div class="orb-radiation wave-1"></div>
           <div class="orb-radiation wave-2"></div>
           <div class="orb-title-wrapper">
-            <span class="orb-title">${t.title}</span>
-            <span class="orb-issuer">${t.issuer}</span>
+            <span class="orb-title">${e.title}</span>
+            <span class="orb-issuer">${e.issuer}</span>
           </div>
         </div>
         
         <!-- The Expanded Card (Hidden by default, shown on hover) -->
         <div class="cert-expanded-card">
           <div class="cert-exp-img">
-            ${t.image?`<img src="${t.image}" alt="${t.title}" loading="lazy">`:'<div class="cert-no-img">NO IMAGE DATA</div>'}
+            ${e.image?`<img src="${e.image}" alt="${e.title}" loading="lazy">`:'<div class="cert-no-img">NO IMAGE DATA</div>'}
           </div>
           <div class="cert-exp-info">
-            <h4>${t.title}</h4>
-            <div class="cert-exp-issuer">${t.issuer} <span style="color:rgba(255,255,255,0.3)">// ${t.date}</span></div>
-            <p>${t.description}</p>
+            <h4>${e.title}</h4>
+            <div class="cert-exp-issuer">${e.issuer} <span style="color:rgba(255,255,255,0.3)">// ${e.date}</span></div>
+            <p>${e.description}</p>
           </div>
         </div>
       </div>
@@ -871,12 +937,12 @@
       </div>
       
       <div class="scifi-certs-wrapper">
-        ${e}
+        ${t}
       </div>
     </div>
-  `}function I(){const i=document.getElementById("skills");if(!i)return;const e=Object.entries(u.skills).map(([t,n],o)=>`
+  `}function I(){const i=document.getElementById("skills");if(!i)return;const t=Object.entries(x.skills).map(([e,n],o)=>`
     <div class="scifi-skill-cat reveal-${o%2===0?"left":"right"}">
-      <h3>${t}</h3>
+      <h3>${e}</h3>
       <div class="skill-tags">
         ${n.map(a=>`<span>${a}</span>`).join("")}
       </div>
@@ -929,7 +995,7 @@
       </div>
       
       <div class="scifi-skills-grid">
-        ${e}
+        ${t}
       </div>
     </div>
   `}function P(){const i=document.getElementById("contact");i&&(i.innerHTML=`
@@ -1180,10 +1246,10 @@
             </div>
             
             <!-- Nodes -->
-            <a href="${u.profile.github}" target="_blank" class="cyber-node node-1" data-id="1" data-lbl="GITHUB_REPO" data-val="github.com/Hyphen-14">
+            <a href="${x.profile.github}" target="_blank" class="cyber-node node-1" data-id="1" data-lbl="GITHUB_REPO" data-val="github.com/Hyphen-14">
               <span class="node-icon">🐙</span>
             </a>
-            <a href="${u.profile.linkedin}" target="_blank" class="cyber-node node-2" data-id="2" data-lbl="LINKEDIN_PROFILE" data-val="yasin-taryaqil-aghyar">
+            <a href="${x.profile.linkedin}" target="_blank" class="cyber-node node-2" data-id="2" data-lbl="LINKEDIN_PROFILE" data-val="yasin-taryaqil-aghyar">
               <span class="node-icon">💼</span>
             </a>
             <a href="https://instagram.com/yasintaryaqil" target="_blank" class="cyber-node node-3" data-id="3" data-lbl="INSTAGRAM_HANDLE" data-val="@yasintaryaqil">
@@ -1197,7 +1263,7 @@
         
       </div>
     </div>
-  `,setTimeout(()=>{const e=document.querySelectorAll(".cyber-node"),t=document.getElementById("node-disp"),n=document.getElementById("nd-lbl"),o=document.getElementById("nd-val"),a=document.getElementById("nodes-container");function d(){if(!a)return;const l=a.getBoundingClientRect(),s=l.width/2,p=l.height/2;e.forEach(c=>{const r=c.getAttribute("data-id"),m=document.getElementById("tether-"+r);if(!m)return;const g=c.getBoundingClientRect(),v=g.left-l.left+g.width/2,y=g.top-l.top+g.height/2,h=Math.sin(Date.now()/300+r*2)*20,S=(s+v)/2+h,T=(p+y)/2-h;m.setAttribute("d",`M ${s} ${p} Q ${S} ${T} ${v} ${y}`)}),requestAnimationFrame(d)}d(),e.forEach(l=>{l.addEventListener("mouseenter",()=>{const s=l.getAttribute("data-id"),p=l.getAttribute("data-lbl"),c=l.getAttribute("data-val");n.innerText="> "+p,o.innerText=c,t.style.borderColor="var(--neon)",t.style.boxShadow="0 0 30px rgba(0, 240, 255, 0.4)",l.classList.add("active-node");const r=document.getElementById("tether-"+s);r&&(r.style.stroke="var(--neon)",r.style.strokeWidth="4")}),l.addEventListener("mouseleave",()=>{const s=l.getAttribute("data-id");n.innerText="SYSTEM STATUS",o.innerText="AWAITING PING...",t.style.borderColor="rgba(176, 38, 255, 0.5)",t.style.boxShadow="0 0 20px rgba(176, 38, 255, 0.2)",l.classList.remove("active-node");const p=document.getElementById("tether-"+s);p&&(p.style.stroke="rgba(176, 38, 255, 0.4)",p.style.strokeWidth="2")})})},0))}let x=!0,f=null;function j(){const i=document.getElementById("audio-toggle");i&&(i.textContent="🔊",i.addEventListener("click",()=>{x=!x,i.textContent=x?"🔊":"🔇",x&&!f&&(f=new(window.AudioContext||window.webkitAudioContext)),x&&b("start")}),document.querySelectorAll("a, button, .tab-btn").forEach(e=>{e.addEventListener("mouseenter",()=>b("hover"))}))}function b(i){if(!x)return;f||(f=new(window.AudioContext||window.webkitAudioContext)),f.state==="suspended"&&f.resume();const e=f.createOscillator(),t=f.createGain();e.connect(t),t.connect(f.destination);const n=f.currentTime;i==="hover"?(e.type="square",e.frequency.setValueAtTime(400,n),e.frequency.exponentialRampToValueAtTime(600,n+.05),t.gain.setValueAtTime(.05,n),t.gain.exponentialRampToValueAtTime(.01,n+.05),e.start(n),e.stop(n+.05)):i==="blip"?(e.type="square",e.frequency.setValueAtTime(800,n),t.gain.setValueAtTime(.02,n),t.gain.exponentialRampToValueAtTime(.01,n+.02),e.start(n),e.stop(n+.02)):i==="decrypt"?(e.type="sawtooth",e.frequency.setValueAtTime(800,n),e.frequency.linearRampToValueAtTime(2e3,n+.1),e.frequency.linearRampToValueAtTime(800,n+.2),t.gain.setValueAtTime(.02,n),t.gain.exponentialRampToValueAtTime(.01,n+.2),e.start(n),e.stop(n+.2)):i==="start"?(e.type="square",e.frequency.setValueAtTime(300,n),e.frequency.setValueAtTime(400,n+.1),e.frequency.setValueAtTime(600,n+.2),t.gain.setValueAtTime(.1,n),t.gain.linearRampToValueAtTime(0,n+.4),e.start(n),e.stop(n+.4)):i==="achievement"&&(e.type="square",e.frequency.setValueAtTime(440,n),e.frequency.setValueAtTime(554.37,n+.1),e.frequency.setValueAtTime(659.25,n+.2),e.frequency.setValueAtTime(880,n+.3),t.gain.setValueAtTime(.1,n),t.gain.linearRampToValueAtTime(0,n+.6),e.start(n),e.stop(n+.6))}let w=!1;function L(){O(),M(),j();const i=document.getElementById("title-screen"),e=document.getElementById("app-content");if(w)return;w=!0;const t=$(),n=i.querySelector("h1"),o=i.querySelector(".press-start"),a=i.querySelector(".cyber-lock"),d=document.getElementById("shackle");o.style.animation="none",o.textContent="[ DECRYPTING... ]",o.style.color="var(--gold)",a.style.animationDuration="1s";const l="UNLOCK PROFILE",s="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";let p=setInterval(()=>{n.textContent=l.split("").map(r=>r===" "?" ":s[Math.floor(Math.random()*s.length)]).join("")},50);setTimeout(()=>{clearInterval(p),n.textContent="ACCESS GRANTED",n.style.color="#41f28b",o.textContent="[ SYSTEM UNLOCKED ]",o.style.color="#41f28b",d&&(d.style.transform="translateY(-15px)"),b("start"),setTimeout(()=>{i.classList.add("hidden"),setTimeout(()=>{t(),i.style.display="none",e.style.display="block",R()},500)},400)},1e3),document.getElementById("crt-toggle").addEventListener("click",()=>{document.body.classList.toggle("crt"),b("blip")})}function R(){const i=document.querySelectorAll(".section"),e=new Set,t=new IntersectionObserver(o=>{o.forEach(a=>{if(a.isIntersecting){const d=a.target.id;!e.has(d)&&d!=="about"&&d!==""&&(e.add(d),B(`Explored: ${d.toUpperCase()}`)),a.target.querySelectorAll(".typed:not(.typing-done)").forEach(s=>{const p=s.getAttribute("data-text")||s.textContent;s.setAttribute("data-text",p),s.textContent="",s.classList.add("typing-done"),k(s,p,0)})}})},{threshold:.3});i.forEach(o=>t.observe(o));const n=new IntersectionObserver(o=>{o.forEach(a=>{a.isIntersecting&&a.target.classList.add("is-visible")})},{threshold:.1,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".reveal-pop, .reveal-left, .reveal-right").forEach(o=>n.observe(o))}function k(i,e,t){t<e.length&&(i.textContent+=e.charAt(t),t%3===0&&b("blip"),setTimeout(()=>k(i,e,t+1),20))}function B(i){const e=document.getElementById("achievement-popup"),t=document.getElementById("achievement-text");t.textContent=i,e.classList.add("show"),b("achievement"),setTimeout(()=>{e.classList.remove("show")},4e3)}document.addEventListener("DOMContentLoaded",L);function M(){const i=document.createElement("style");i.innerHTML=`
+  `,setTimeout(()=>{const t=document.querySelectorAll(".cyber-node"),e=document.getElementById("node-disp"),n=document.getElementById("nd-lbl"),o=document.getElementById("nd-val"),a=document.getElementById("nodes-container");function g(){if(!a)return;const p=a.getBoundingClientRect(),c=p.width/2,s=p.height/2;t.forEach(l=>{const r=l.getAttribute("data-id"),d=document.getElementById("tether-"+r);if(!d)return;const m=l.getBoundingClientRect(),b=m.left-p.left+m.width/2,h=m.top-p.top+m.height/2,u=Math.sin(Date.now()/300+r*2)*20,S=(c+b)/2+u,T=(s+h)/2-u;d.setAttribute("d",`M ${c} ${s} Q ${S} ${T} ${b} ${h}`)}),requestAnimationFrame(g)}g(),t.forEach(p=>{p.addEventListener("mouseenter",()=>{const c=p.getAttribute("data-id"),s=p.getAttribute("data-lbl"),l=p.getAttribute("data-val");n.innerText="> "+s,o.innerText=l,e.style.borderColor="var(--neon)",e.style.boxShadow="0 0 30px rgba(0, 240, 255, 0.4)",p.classList.add("active-node");const r=document.getElementById("tether-"+c);r&&(r.style.stroke="var(--neon)",r.style.strokeWidth="4")}),p.addEventListener("mouseleave",()=>{const c=p.getAttribute("data-id");n.innerText="SYSTEM STATUS",o.innerText="AWAITING PING...",e.style.borderColor="rgba(176, 38, 255, 0.5)",e.style.boxShadow="0 0 20px rgba(176, 38, 255, 0.2)",p.classList.remove("active-node");const s=document.getElementById("tether-"+c);s&&(s.style.stroke="rgba(176, 38, 255, 0.4)",s.style.strokeWidth="2")})})},0))}let v=!0,f=null;function L(){const i=document.getElementById("audio-toggle");i&&(i.textContent="🔊",i.addEventListener("click",()=>{v=!v,i.textContent=v?"🔊":"🔇",v&&!f&&(f=new(window.AudioContext||window.webkitAudioContext)),v&&y("start")}),document.querySelectorAll("a, button, .tab-btn").forEach(t=>{t.addEventListener("mouseenter",()=>y("hover"))}))}function y(i){if(!v)return;f||(f=new(window.AudioContext||window.webkitAudioContext)),f.state==="suspended"&&f.resume();const t=f.createOscillator(),e=f.createGain();t.connect(e),e.connect(f.destination);const n=f.currentTime;i==="hover"?(t.type="square",t.frequency.setValueAtTime(400,n),t.frequency.exponentialRampToValueAtTime(600,n+.05),e.gain.setValueAtTime(.05,n),e.gain.exponentialRampToValueAtTime(.01,n+.05),t.start(n),t.stop(n+.05)):i==="blip"?(t.type="square",t.frequency.setValueAtTime(800,n),e.gain.setValueAtTime(.02,n),e.gain.exponentialRampToValueAtTime(.01,n+.02),t.start(n),t.stop(n+.02)):i==="decrypt"?(t.type="sawtooth",t.frequency.setValueAtTime(800,n),t.frequency.linearRampToValueAtTime(2e3,n+.1),t.frequency.linearRampToValueAtTime(800,n+.2),e.gain.setValueAtTime(.02,n),e.gain.exponentialRampToValueAtTime(.01,n+.2),t.start(n),t.stop(n+.2)):i==="start"?(t.type="square",t.frequency.setValueAtTime(300,n),t.frequency.setValueAtTime(400,n+.1),t.frequency.setValueAtTime(600,n+.2),e.gain.setValueAtTime(.1,n),e.gain.linearRampToValueAtTime(0,n+.4),t.start(n),t.stop(n+.4)):i==="achievement"&&(t.type="square",t.frequency.setValueAtTime(440,n),t.frequency.setValueAtTime(554.37,n+.1),t.frequency.setValueAtTime(659.25,n+.2),t.frequency.setValueAtTime(880,n+.3),e.gain.setValueAtTime(.1,n),e.gain.linearRampToValueAtTime(0,n+.6),t.start(n),t.stop(n+.6))}let w=!1;function j(){O(),M(),L();const i=document.getElementById("title-screen"),t=document.getElementById("app-content");if(w)return;w=!0;const e=$(),n=i.querySelector("h1"),o=i.querySelector(".press-start"),a=i.querySelector(".cyber-lock"),g=document.getElementById("shackle");o.style.animation="none",o.textContent="[ DECRYPTING... ]",o.style.color="var(--gold)",a.style.animationDuration="1s";const p="UNLOCK PROFILE",c="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";let s=setInterval(()=>{n.textContent=p.split("").map(r=>r===" "?" ":c[Math.floor(Math.random()*c.length)]).join("")},50);setTimeout(()=>{clearInterval(s),n.textContent="ACCESS GRANTED",n.style.color="#41f28b",o.textContent="[ SYSTEM UNLOCKED ]",o.style.color="#41f28b",g&&(g.style.transform="translateY(-15px)"),y("start"),setTimeout(()=>{i.classList.add("hidden"),setTimeout(()=>{e(),i.style.display="none",t.style.display="block",R()},500)},400)},1e3),document.getElementById("crt-toggle").addEventListener("click",()=>{document.body.classList.toggle("crt"),y("blip")})}function R(){const i=document.querySelectorAll(".section"),t=new Set,e=new IntersectionObserver(o=>{o.forEach(a=>{if(a.isIntersecting){const g=a.target.id;!t.has(g)&&g!=="about"&&g!==""&&(t.add(g),B(`Explored: ${g.toUpperCase()}`)),a.target.querySelectorAll(".typed:not(.typing-done)").forEach(c=>{const s=c.getAttribute("data-text")||c.textContent;c.setAttribute("data-text",s),c.textContent="",c.classList.add("typing-done"),k(c,s,0)})}})},{threshold:.3});i.forEach(o=>e.observe(o));const n=new IntersectionObserver(o=>{o.forEach(a=>{a.isIntersecting&&a.target.classList.add("is-visible")})},{threshold:.1,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".reveal-pop, .reveal-left, .reveal-right").forEach(o=>n.observe(o))}function k(i,t,e){e<t.length&&(i.textContent+=t.charAt(e),e%3===0&&y("blip"),setTimeout(()=>k(i,t,e+1),20))}function B(i){const t=document.getElementById("achievement-popup"),e=document.getElementById("achievement-text");e.textContent=i,t.classList.add("show"),y("achievement"),setTimeout(()=>{t.classList.remove("show")},4e3)}document.addEventListener("DOMContentLoaded",j);function M(){const i=document.createElement("style");i.innerHTML=`
     * { cursor: none !important; }
     .custom-cursor {
       position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999;
@@ -1239,4 +1305,4 @@
       transform: translate(-50%, -50%);
       box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
     }
-  `,document.head.appendChild(i);const e=document.createElement("div");e.className="custom-cursor",document.body.appendChild(e);const t=document.createElement("div");t.className="cursor-head",e.appendChild(t);const n=[],o=8;for(let c=0;c<o;c++){const r=document.createElement("div");r.className="cursor-tail",r.style.opacity=1-c/o;const m=10-c;r.style.width=m+"px",r.style.height=m+"px",e.appendChild(r),n.push({el:r,x:window.innerWidth/2,y:window.innerHeight/2})}let a=window.innerWidth/2,d=window.innerHeight/2,l=a,s=d;document.addEventListener("mousemove",c=>{a=c.clientX,d=c.clientY});function p(){l+=(a-l)*.4,s+=(d-s)*.4,t.style.left=l+"px",t.style.top=s+"px";let c=l,r=s;for(let m=0;m<n.length;m++){const g=n[m];g.x+=(c-g.x)*.4,g.y+=(r-g.y)*.4,g.el.style.left=g.x+"px",g.el.style.top=g.y+"px",c=g.x,r=g.y}requestAnimationFrame(p)}p()}function $(){const i=document.getElementById("warp-canvas");if(!i)return()=>{};const e=i.getContext("2d");function t(){i.width=window.innerWidth,i.height=window.innerHeight}window.addEventListener("resize",t),t();const n=[],o=400;let a=1,d=!0;for(let s=0;s<o;s++)n.push({x:(Math.random()-.5)*i.width*2,y:(Math.random()-.5)*i.height*2,z:Math.random()*i.width,pz:0});function l(){if(!d)return;e.fillStyle="rgba(5, 10, 31, 0.4)",e.fillRect(0,0,i.width,i.height);const s=i.width/2,p=i.height/2;a+=.3,a>25&&(a=25);for(let c=0;c<o;c++){const r=n[c];r.pz=r.z,r.z-=a,r.z<=0&&(r.z=i.width,r.pz=i.width,r.x=(Math.random()-.5)*i.width*2,r.y=(Math.random()-.5)*i.height*2);const m=r.x/r.z*i.width+s,g=r.y/r.z*i.height+p,v=r.x/r.pz*i.width+s,y=r.y/r.pz*i.height+p,h=1-r.z/i.width;e.beginPath(),e.moveTo(v,y),e.lineTo(m,g),e.strokeStyle=c%3===0?`rgba(176, 38, 255, ${h})`:`rgba(0, 240, 255, ${h})`,e.lineWidth=1+(1-r.z/i.width)*4,e.stroke()}requestAnimationFrame(l)}return l(),()=>{d=!1,window.removeEventListener("resize",t)}}
+  `,document.head.appendChild(i);const t=document.createElement("div");t.className="custom-cursor",document.body.appendChild(t);const e=document.createElement("div");e.className="cursor-head",t.appendChild(e);const n=[],o=8;for(let l=0;l<o;l++){const r=document.createElement("div");r.className="cursor-tail",r.style.opacity=1-l/o;const d=10-l;r.style.width=d+"px",r.style.height=d+"px",t.appendChild(r),n.push({el:r,x:window.innerWidth/2,y:window.innerHeight/2})}let a=window.innerWidth/2,g=window.innerHeight/2,p=a,c=g;document.addEventListener("mousemove",l=>{a=l.clientX,g=l.clientY});function s(){p+=(a-p)*.4,c+=(g-c)*.4,e.style.left=p+"px",e.style.top=c+"px";let l=p,r=c;for(let d=0;d<n.length;d++){const m=n[d];m.x+=(l-m.x)*.4,m.y+=(r-m.y)*.4,m.el.style.left=m.x+"px",m.el.style.top=m.y+"px",l=m.x,r=m.y}requestAnimationFrame(s)}s()}function $(){const i=document.getElementById("warp-canvas");if(!i)return()=>{};const t=i.getContext("2d");function e(){i.width=window.innerWidth,i.height=window.innerHeight}window.addEventListener("resize",e),e();const n=[],o=400;let a=1,g=!0;for(let c=0;c<o;c++)n.push({x:(Math.random()-.5)*i.width*2,y:(Math.random()-.5)*i.height*2,z:Math.random()*i.width,pz:0});function p(){if(!g)return;t.fillStyle="rgba(5, 10, 31, 0.4)",t.fillRect(0,0,i.width,i.height);const c=i.width/2,s=i.height/2;a+=.3,a>25&&(a=25);for(let l=0;l<o;l++){const r=n[l];r.pz=r.z,r.z-=a,r.z<=0&&(r.z=i.width,r.pz=i.width,r.x=(Math.random()-.5)*i.width*2,r.y=(Math.random()-.5)*i.height*2);const d=r.x/r.z*i.width+c,m=r.y/r.z*i.height+s,b=r.x/r.pz*i.width+c,h=r.y/r.pz*i.height+s,u=1-r.z/i.width;t.beginPath(),t.moveTo(b,h),t.lineTo(d,m),t.strokeStyle=l%3===0?`rgba(176, 38, 255, ${u})`:`rgba(0, 240, 255, ${u})`,t.lineWidth=1+(1-r.z/i.width)*4,t.stroke()}requestAnimationFrame(p)}return p(),()=>{g=!1,window.removeEventListener("resize",e)}}
