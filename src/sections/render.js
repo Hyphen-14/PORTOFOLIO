@@ -1217,7 +1217,7 @@ function renderCertifications() {
     <div class="section-inner">
       <div class="section-head reveal-pop">
         <h2 class="section-title" style="color: #fff; font-family: 'Space Grotesk', sans-serif;">CERTIFICATIONS</h2>
-        <span class="section-kicker">ACHIEVEMENTS // HR CREDENTIAL REGISTRY</span>
+        <span class="section-kicker">ACHIEVEMENTS</span>
       </div>
       
       <div class="holo-certs-grid">
