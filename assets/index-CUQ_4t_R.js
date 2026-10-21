@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))n(o);new MutationObserver(o=>{for(const a of o)if(a.type==="childList")for(const g of a.addedNodes)g.tagName==="LINK"&&g.rel==="modulepreload"&&n(g)}).observe(document,{childList:!0,subtree:!0});function e(o){const a={};return o.integrity&&(a.integrity=o.integrity),o.referrerPolicy&&(a.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?a.credentials="include":o.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function n(o){if(o.ep)return;o.ep=!0;const a=e(o);fetch(o.href,a)}})();const x={profile:{summary:"Computer Science student at Binus University with a strong focus on Cyber Security, Networking, and Software Development. Highly passionate about penetration testing, vulnerability assessment, and building secure systems. Equipped with practical knowledge from intensive cybersecurity bootcamps and proven leadership experience in developing technology-focused educational programs. Actively seeking an IT internship to apply technical skills in a dynamic professional environment.",linkedin:"https://www.linkedin.com/in/yasin-taryaqil-aghyar-3a9174326/",github:"https://github.com/Hyphen-14"},experience:[{organization:"Bina Nusantara (Binus) University",location:"Jakarta",role:"Computer Science Student (Cyber Security)",year:"2024 - Present",image:"/PORTOFOLIO/assets/experience/binus_student.jpg",description:"Currently pursuing a Bachelor's degree in Computer Science with a streaming focus on Cyber Security. Actively developing skills in secure software architecture, network defense, and system vulnerabilities."},{organization:"Yayasan SMK Swasta Mandiri Bersemi",location:"Cianjur",role:"SDC Program Educator & Co-founder",year:"2026",image:"/PORTOFOLIO/assets/experience/yayasan.jpg",description:"Co-founded and developed the Student Development Club (SDC), an extracurricular program designed to help students discover and hone practical skills specific to their fields of interest. Formulated the curriculum and learning systems to foster student achievement and technological literacy. Taught and mentored students in technology."},{organization:"Binus University",location:"Jakarta",role:"1st Place - Business Competition",year:"2025",image:"/PORTOFOLIO/assets/experience/business_plan.jpg",description:"Won first place in the university-wide business competition, demonstrating strong entrepreneurial and strategic planning skills."},{organization:"Rework Academy",location:"Online",role:"Cyber Security Trainee",year:"2026",image:"/PORTOFOLIO/assets/experience/rework.jpg",description:"Completed an intensive Cyber Security Bootcamp focusing on Red Teaming, Vulnerability Assessment, and SOC fundamentals. Gained hands-on experience in areas such as reconnaissance, API security, web exploitation (SQLi, XSS, RCE), SSRF, security monitoring, and bug bounty practices. Developed skills in pentest reporting and practical cybersecurity operations."},{organization:"Timedoor Academy",location:"Online",role:"JavaScript & Game Dev Student",year:"2023",image:"/PORTOFOLIO/assets/experience/timedoor.png",description:"Participated in coding classes focusing on JavaScript and Game Development. Applied programming logic, conditional loops, and JS methods to build mini-projects and case studies."},{organization:"Coding Studio",location:"Online",role:"Cyber Security & IT Student",year:"2025",image:"/PORTOFOLIO/assets/experience/coding_studio.png",description:"Completed comprehensive online courses covering Fundamental Cyber Security, Linux Command Line, Computer Networking, and Algorithms, building a strong foundation in information technology and security."}],certifications:[{title:"Evaluating Real-World QR Code Scanner in Detecting Quishing",issuer:"ICORIS (IEEE)",date:"September 2026",image:"/PORTOFOLIO/assets/certs/icoris.png",description:"Published and presented a comparative empirical security study as an Author at the 8th International Conference on Cybernetics and Intelligent Systems (ICORIS)."},{title:"Capture The Flag Participant",issuer:"COMPFEST 17",date:"2026",image:"/PORTOFOLIO/assets/certs/compfest.png",description:"Participated in the Capture The Flag (CTF) cybersecurity competition at COMPFEST 17."},{title:"Teaching & Educational Contribution",issuer:"Yayasan Mandiri Bersemi",date:"2026",image:"/PORTOFOLIO/assets/certs/cert-teaching.png",description:"Recognized for contributions as a Mentor & Instructor in the Student Development Club (SDC)."},{title:"Fundamental Cyber Security",issuer:"Coding Studio",date:"August 2025",image:"/PORTOFOLIO/assets/certs/cert-cybersecurity.png",description:"Successfully completed the Fundamental Cyber Security online course, learning the core concepts of information security."},{title:"Fundamental Command Linux",issuer:"Coding Studio",date:"July 2025",image:"/PORTOFOLIO/assets/certs/cert-linux.png",description:"Mastered fundamental Linux command-line operations essential for system administration and penetration testing."},{title:"Fundamental Jaringan Komputer",issuer:"Coding Studio",date:"May 2025",image:"/PORTOFOLIO/assets/certs/cert-jaringan.png",description:"Gained a solid understanding of computer networking principles, protocols, and architecture."},{title:"Fundamental Algoritma",issuer:"Coding Studio",date:"May 2025",image:"/PORTOFOLIO/assets/certs/cert-algoritma.png",description:"Developed strong foundational skills in programming logic, algorithms, and problem-solving techniques."},{title:"Cyber Security Bootcamp",issuer:"Rework Academy",date:"Aug 2026 – Oct 2026",note:"(Completed, Certificate Pending)",description:"Intensive training program focused on practical penetration testing and vulnerability assessment."},{title:"Technology Project Member (TPM) - Back-End",issuer:"BNCC x Traveloka",date:"2024",image:"/PORTOFOLIO/assets/certs/tpm.jpg",description:"Participated as a Backend Developer utilizing the Laravel framework for a web project sponsored by Traveloka."},{title:"Python Course",issuer:"Kaggle",date:"August 2026",image:"/PORTOFOLIO/assets/certs/kaggle.png",description:"Successfully completed the Python course on Kaggle, mastering core programming concepts and logic."}],skills:{"Cyber Security":["Penetration Testing","Red Teaming","Vulnerability Assessment","Web Exploitation (SQLi, XSS, RCE)","Incident Analysis","SOC Fundamentals"],Networking:["Network Traffic Analysis","Subnetting","Security Monitoring"],"Software Development":["C","C++","Java","Python","PHP","JavaScript","SQL","Web/Mobile App Architecture"],"Tools & OS":["Kali Linux","Burp Suite","Nmap","Ghidra","Wireshark","Docker","Git","VS Code"]},projects:[{name:"OWASP Juice Shop Security Audit",category:"Cyber Security",description:"Comprehensive security audit and penetration testing on OWASP Juice Shop. Performed reconnaissance, client-side Angular code inspection (bypassing sanitization), attack surface sequence modeling, and Proof of Concept (PoC) DOM XSS / injection exploitation.",tech:["Cyber Security","Penetration Testing","Angular","Web Security"],link:"https://github.com/Hyphen-14/owasp-juice-shop-security-audit",image:"/PORTOFOLIO/assets/projects/owasp-juice-shop.png"},{name:"QR-Phishing",category:"Cyber Security",description:"A proof-of-concept tool demonstrating the risks of malicious QR codes in phishing attacks.",tech:["Python","Cyber Security"],link:"https://github.com/Hyphen-14/QR-Phishing-Example-Generator-for-Scanner-App-Testing-/tree/main/scanner_helper_tool",image:"/PORTOFOLIO/assets/projects/qr-phishing.png"},{name:"VOLO",category:"Web Development",description:"A comprehensive flight ticket booking application designed for seamless travel planning and management.",tech:["Web Development","JavaScript","PHP"],link:"https://github.com/Hyphen-14/VOLO",image:"/PORTOFOLIO/assets/projects/volo.png"},{name:"Chloris AI",category:"AI & Machine Learning",description:"An AI-powered diagnostic tool for detecting plant diseases and assessing plant health. Built with custom-trained data to provide accurate care recommendations and treatment solutions.",tech:["Python","AI"],link:"https://github.com/Hyphen-14/Chloris-ai",image:"/PORTOFOLIO/assets/projects/chloris.png"},{name:"NutriCare AI",category:["AI & Machine Learning","Web Development"],description:"An AI-powered application designed to help patients choose suitable meals and track their recovery progress. The app also connects patients directly with required specialist doctors.",tech:["AI","Web Development"],link:"https://github.com/Raynerqt/food-recomendation",image:"/PORTOFOLIO/assets/projects/nutricare.png"}]};function O(){A(),C(),E(),z(),I(),P()}function A(){const i=document.getElementById("about");if(!i)return;i.style.padding="0";const t="Passionate about penetration testing, identifying system vulnerabilities, and building robust, secure digital architectures.";i.innerHTML=`
+(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))n(i);new MutationObserver(i=>{for(const a of i)if(a.type==="childList")for(const p of a.addedNodes)p.tagName==="LINK"&&p.rel==="modulepreload"&&n(p)}).observe(document,{childList:!0,subtree:!0});function e(i){const a={};return i.integrity&&(a.integrity=i.integrity),i.referrerPolicy&&(a.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?a.credentials="include":i.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function n(i){if(i.ep)return;i.ep=!0;const a=e(i);fetch(i.href,a)}})();const h={profile:{summary:"Computer Science student at Binus University with a strong focus on Cyber Security, Networking, and Software Development. Highly passionate about penetration testing, vulnerability assessment, and building secure systems. Equipped with practical knowledge from intensive cybersecurity bootcamps and proven leadership experience in developing technology-focused educational programs. Actively seeking an IT internship to apply technical skills in a dynamic professional environment.",linkedin:"https://www.linkedin.com/in/yasin-taryaqil-aghyar-3a9174326/",github:"https://github.com/Hyphen-14"},experience:[{organization:"Bina Nusantara (Binus) University",location:"Jakarta",role:"Computer Science Student (Cyber Security)",year:"2024 - Present",image:"/PORTOFOLIO/assets/experience/binus_student.jpg",description:"Currently pursuing a Bachelor's degree in Computer Science with a streaming focus on Cyber Security. Actively developing skills in secure software architecture, network defense, and system vulnerabilities."},{organization:"Yayasan SMK Swasta Mandiri Bersemi",location:"Cianjur",role:"SDC Program Educator & Co-founder",year:"2026",image:"/PORTOFOLIO/assets/experience/yayasan.jpg",description:"Co-founded and developed the Student Development Club (SDC), an extracurricular program designed to help students discover and hone practical skills specific to their fields of interest. Formulated the curriculum and learning systems to foster student achievement and technological literacy. Taught and mentored students in technology."},{organization:"Binus University",location:"Jakarta",role:"1st Place - Business Competition",year:"2025",image:"/PORTOFOLIO/assets/experience/business_plan.jpg",description:"Won first place in the university-wide business competition, demonstrating strong entrepreneurial and strategic planning skills."},{organization:"Rework Academy",location:"Online",role:"Cyber Security Trainee",year:"2026",image:"/PORTOFOLIO/assets/experience/rework.jpg",description:"Completed an intensive Cyber Security Bootcamp focusing on Red Teaming, Vulnerability Assessment, and SOC fundamentals. Gained hands-on experience in areas such as reconnaissance, API security, web exploitation (SQLi, XSS, RCE), SSRF, security monitoring, and bug bounty practices. Developed skills in pentest reporting and practical cybersecurity operations."},{organization:"Timedoor Academy",location:"Online",role:"JavaScript & Game Dev Student",year:"2023",image:"/PORTOFOLIO/assets/experience/timedoor.png",description:"Participated in coding classes focusing on JavaScript and Game Development. Applied programming logic, conditional loops, and JS methods to build mini-projects and case studies."},{organization:"Coding Studio",location:"Online",role:"Cyber Security & IT Student",year:"2025",image:"/PORTOFOLIO/assets/experience/coding_studio.png",description:"Completed comprehensive online courses covering Fundamental Cyber Security, Linux Command Line, Computer Networking, and Algorithms, building a strong foundation in information technology and security."}],certifications:[{title:"Evaluating Real-World QR Code Scanner in Detecting Quishing",issuer:"ICORIS (IEEE)",date:"September 2026",image:"/PORTOFOLIO/assets/certs/icoris.png",description:"Published and presented a comparative empirical security study as an Author at the 8th International Conference on Cybernetics and Intelligent Systems (ICORIS)."},{title:"Capture The Flag Participant",issuer:"COMPFEST 17",date:"2026",image:"/PORTOFOLIO/assets/certs/compfest.png",description:"Participated in the Capture The Flag (CTF) cybersecurity competition at COMPFEST 17."},{title:"Teaching & Educational Contribution",issuer:"Yayasan Mandiri Bersemi",date:"2026",image:"/PORTOFOLIO/assets/certs/cert-teaching.png",description:"Recognized for contributions as a Mentor & Instructor in the Student Development Club (SDC)."},{title:"Fundamental Cyber Security",issuer:"Coding Studio",date:"August 2025",image:"/PORTOFOLIO/assets/certs/cert-cybersecurity.png",description:"Successfully completed the Fundamental Cyber Security online course, learning the core concepts of information security."},{title:"Fundamental Command Linux",issuer:"Coding Studio",date:"July 2025",image:"/PORTOFOLIO/assets/certs/cert-linux.png",description:"Mastered fundamental Linux command-line operations essential for system administration and penetration testing."},{title:"Fundamental Jaringan Komputer",issuer:"Coding Studio",date:"May 2025",image:"/PORTOFOLIO/assets/certs/cert-jaringan.png",description:"Gained a solid understanding of computer networking principles, protocols, and architecture."},{title:"Fundamental Algoritma",issuer:"Coding Studio",date:"May 2025",image:"/PORTOFOLIO/assets/certs/cert-algoritma.png",description:"Developed strong foundational skills in programming logic, algorithms, and problem-solving techniques."},{title:"Cyber Security Bootcamp",issuer:"Rework Academy",date:"Aug 2026 – Oct 2026",note:"(Completed, Certificate Pending)",description:"Intensive training program focused on practical penetration testing and vulnerability assessment."},{title:"Technology Project Member (TPM) - Back-End",issuer:"BNCC x Traveloka",date:"2024",image:"/PORTOFOLIO/assets/certs/tpm.jpg",description:"Participated as a Backend Developer utilizing the Laravel framework for a web project sponsored by Traveloka."},{title:"Python Course",issuer:"Kaggle",date:"August 2026",image:"/PORTOFOLIO/assets/certs/kaggle.png",description:"Successfully completed the Python course on Kaggle, mastering core programming concepts and logic."}],skills:{"Cyber Security":["Penetration Testing","Red Teaming","Vulnerability Assessment","Web Exploitation (SQLi, XSS, RCE)","Incident Analysis","SOC Fundamentals"],Networking:["Network Traffic Analysis","Subnetting","Security Monitoring"],"Software Development":["C","C++","Java","Python","PHP","JavaScript","SQL","Web/Mobile App Architecture"],"Tools & OS":["Kali Linux","Burp Suite","Nmap","Ghidra","Wireshark","Docker","Git","VS Code"]},projects:[{name:"OWASP Juice Shop Security Audit",category:"Cyber Security",description:"Comprehensive security audit and penetration testing on OWASP Juice Shop. Performed reconnaissance, client-side Angular code inspection (bypassing sanitization), attack surface sequence modeling, and Proof of Concept (PoC) DOM XSS / injection exploitation.",tech:["Cyber Security","Penetration Testing","Angular","Web Security"],link:"https://github.com/Hyphen-14/owasp-juice-shop-security-audit",image:"/PORTOFOLIO/assets/projects/owasp-juice-shop.png"},{name:"Smart City App Pentest",category:"Cyber Security",description:"Mobile application penetration testing and vulnerability assessment on Smart City Citizen platforms. Analyzed attack surfaces including insecure API endpoints, broken authorization (IDOR), sensitive local data storage, and network communication encryption flaws.",tech:["Cyber Security","Mobile Pentest","API Security","Vulnerability Assessment"],link:"https://github.com/Hyphen-14/smart-city-citizen-app-pentest",image:"/PORTOFOLIO/assets/projects/smart-city-pentest.svg"},{name:"QR-Phishing",category:"Cyber Security",description:"A proof-of-concept tool demonstrating the risks of malicious QR codes in phishing attacks.",tech:["Python","Cyber Security"],link:"https://github.com/Hyphen-14/QR-Phishing-Example-Generator-for-Scanner-App-Testing-/tree/main/scanner_helper_tool",image:"/PORTOFOLIO/assets/projects/qr-phishing.png"},{name:"VOLO",category:"Web Development",description:"A comprehensive flight ticket booking application designed for seamless travel planning and management.",tech:["Web Development","JavaScript","PHP"],link:"https://github.com/Hyphen-14/VOLO",image:"/PORTOFOLIO/assets/projects/volo.png"},{name:"Chloris AI",category:"AI & Machine Learning",description:"An AI-powered diagnostic tool for detecting plant diseases and assessing plant health. Built with custom-trained data to provide accurate care recommendations and treatment solutions.",tech:["Python","AI"],link:"https://github.com/Hyphen-14/Chloris-ai",image:"/PORTOFOLIO/assets/projects/chloris.png"},{name:"NutriCare AI",category:["AI & Machine Learning","Web Development"],description:"An AI-powered application designed to help patients choose suitable meals and track their recovery progress. The app also connects patients directly with required specialist doctors.",tech:["AI","Web Development"],link:"https://github.com/Raynerqt/food-recomendation",image:"/PORTOFOLIO/assets/projects/nutricare.png"}]};function A(){O(),z(),I(),P(),L(),R()}function O(){const t=document.getElementById("about");if(!t)return;t.style.padding="0";const o="Passionate about penetration testing, identifying system vulnerabilities, and building robust, secure digital architectures.";t.innerHTML=`
     <style>
       .neon-profile-container {
         position: relative;
@@ -306,7 +306,7 @@
           <div class="neon-subtitle">I design secure networks &</div>
           <div class="neon-title">CYBER<br>SECURITY</div>
           <div class="neon-desc">
-            ${t}
+            ${o}
           </div>
           <div class="neon-buttons">
             <a href="/PORTOFOLIO/assets/cv.pdf" target="_blank" class="neon-btn-primary">
@@ -367,12 +367,12 @@
         <button class="dossier-close" id="close-dossier-btn">&times;</button>
         <div class="dossier-content">
           <h2>FULL DOSSIER</h2>
-          <p>${x.profile.summary}</p>
+          <p>${h.profile.summary}</p>
         </div>
       </div>
     </div>
-  `,setTimeout(()=>{const e=document.getElementById("dossier-overlay"),n=document.getElementById("open-dossier-btn"),o=document.getElementById("close-dossier-btn");n&&e&&n.addEventListener("click",()=>e.style.display="block"),o&&e&&o.addEventListener("click",()=>e.style.display="none"),e&&e.addEventListener("click",a=>{a.target===e&&(e.style.display="none")})},0)}function C(){const i=document.getElementById("experience");if(!i)return;const t=x.experience.map((e,n)=>{const o=n%2===0,a=e.image?`<img src="${e.image}" alt="${e.organization}" class="z-exp-img" loading="lazy">`:'<div class="z-exp-no-image">NO IMAGE DATA</div>';return`
-      <div class="z-exp-row ${o?"":"reverse"} reveal-pop" style="transition-delay: ${n*.1}s;">
+  `,setTimeout(()=>{const e=document.getElementById("dossier-overlay"),n=document.getElementById("open-dossier-btn"),i=document.getElementById("close-dossier-btn");n&&e&&n.addEventListener("click",()=>e.style.display="block"),i&&e&&i.addEventListener("click",()=>e.style.display="none"),e&&e.addEventListener("click",a=>{a.target===e&&(e.style.display="none")})},0)}function z(){const t=document.getElementById("experience");if(!t)return;const o=h.experience.map((e,n)=>{const i=n%2===0,a=e.image?`<img src="${e.image}" alt="${e.organization}" class="z-exp-img" loading="lazy">`:'<div class="z-exp-no-image">NO IMAGE DATA</div>';return`
+      <div class="z-exp-row ${i?"":"reverse"} reveal-pop" style="transition-delay: ${n*.1}s;">
         <div class="z-exp-image-wrapper">
           <div class="target-corner tl-tl"></div>
           <div class="target-corner tl-tr"></div>
@@ -387,7 +387,7 @@
           <p class="z-exp-desc">${e.description}</p>
         </div>
       </div>
-    `}).join("");i.innerHTML=`
+    `}).join("");t.innerHTML=`
     <style>
       .z-exp-container {
         display: flex;
@@ -508,10 +508,10 @@
       </div>
       
       <div class="z-exp-container">
-        ${t}
+        ${o}
       </div>
     </div>
-  `}function E(){const i=document.getElementById("projects");if(!i)return;const t=[{id:"All",label:"ALL PROJECTS"},{id:"Cyber Security",label:"CYBER SECURITY"},{id:"Web Development",label:"WEB DEVELOPMENT"},{id:"AI & Machine Learning",label:"AI & MACHINE LEARNING"}];i.innerHTML=`
+  `}function I(){const t=document.getElementById("projects");if(!t)return;const o=[{id:"All",label:"ALL PROJECTS"},{id:"Cyber Security",label:"CYBER SECURITY"},{id:"Web Development",label:"WEB DEVELOPMENT"},{id:"AI & Machine Learning",label:"AI & MACHINE LEARNING"}];t.innerHTML=`
     <style>
       .proj-filter-bar {
         display: flex;
@@ -685,7 +685,7 @@
 
       <!-- Category Filter Tabs -->
       <div class="proj-filter-bar reveal-pop">
-        ${t.map((e,n)=>`
+        ${o.map((e,n)=>`
           <button class="proj-filter-btn ${n===0?"active":""}" data-filter="${e.id}">
             <span class="proj-filter-dot"></span> [ ${e.label} ]
           </button>
@@ -702,252 +702,381 @@
         </div>
       </div>
     </div>
-  `,setTimeout(()=>{const e=document.getElementById("proj-list-container"),n=document.getElementById("proj-dossier-view"),o=i.querySelectorAll(".proj-filter-btn");if(!e||!n)return;let a=-1,g=null;const p=(s,l,r=!1)=>{if(!r&&a===l&&g===s)return;a=l,g=s;const d=s[l];if(!d)return;const m=e.querySelectorAll(".proj-item");m.forEach(u=>u.classList.remove("active")),m[l]&&m[l].classList.add("active");const b=d.image?'<img src="'+d.image+'" alt="'+d.name+'" loading="lazy">':'<div class="proj-no-image">NO IMAGE DATA</div>',h=d.tech.map(u=>"<span>"+u+"</span>").join("");n.innerHTML=`
+  `,setTimeout(()=>{const e=document.getElementById("proj-list-container"),n=document.getElementById("proj-dossier-view"),i=t.querySelectorAll(".proj-filter-btn");if(!e||!n)return;let a=-1,p=null;const l=(c,s,r=!1)=>{if(!r&&a===s&&p===c)return;a=s,p=c;const g=c[s];if(!g)return;const m=e.querySelectorAll(".proj-item");m.forEach(u=>u.classList.remove("active")),m[s]&&m[s].classList.add("active");const f=g.image?'<img src="'+g.image+'" alt="'+g.name+'" loading="lazy">':'<div class="proj-no-image">NO IMAGE DATA</div>',b=g.tech.map(u=>"<span>"+u+"</span>").join("");n.innerHTML=`
         <div class="proj-image-frame">
           <div class="proj-scanline"></div>
           <div class="target-corner tl-tl"></div>
           <div class="target-corner tl-tr"></div>
           <div class="target-corner tl-bl"></div>
           <div class="target-corner tl-br"></div>
-          ${b}
+          ${f}
         </div>
         <div class="proj-details">
           <div class="proj-title-row">
-            <div class="proj-org">${d.name}</div>
-            <a href="${d.link}" target="_blank" class="proj-link-btn">SOURCE CODE</a>
+            <div class="proj-org">${g.name}</div>
+            <a href="${g.link}" target="_blank" class="proj-link-btn">SOURCE CODE</a>
           </div>
-          <div class="proj-tech-tags">${h}</div>
-          <div class="proj-desc">${d.description}</div>
+          <div class="proj-tech-tags">${b}</div>
+          <div class="proj-desc">${g.description}</div>
         </div>
-      `,n.style.animation="none",n.offsetHeight,n.style.animation="hero-fade-in 0.3s ease-out backwards"},c=s=>{if(s.length===0){e.innerHTML=`
+      `,n.style.animation="none",n.offsetHeight,n.style.animation="hero-fade-in 0.3s ease-out backwards"},d=c=>{if(c.length===0){e.innerHTML=`
           <div style="padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; font-family: 'Space Grotesk', sans-serif;">
             // NO PROJECTS IN THIS CATEGORY
           </div>
         `,n.innerHTML=`
           <div class="proj-no-image" style="height: 350px;">NO DATA SELECTED</div>
-        `;return}e.innerHTML=s.map((r,d)=>`
-          <div class="proj-item ${d===0?"active":""}" data-index="${d}">
+        `;return}e.innerHTML=c.map((r,g)=>`
+          <div class="proj-item ${g===0?"active":""}" data-index="${g}">
             <span class="proj-name">> ${r.name}</span>
             <span class="proj-tech-mini">${r.tech.slice(0,2).join(", ")}</span>
           </div>
-        `).join(""),e.querySelectorAll(".proj-item").forEach((r,d)=>{r.addEventListener("mouseenter",()=>p(s,d)),r.addEventListener("click",()=>p(s,d))}),p(s,0,!0)};o.forEach(s=>{s.addEventListener("click",()=>{o.forEach(d=>d.classList.remove("active")),s.classList.add("active");const l=s.getAttribute("data-filter"),r=l==="All"?x.projects:x.projects.filter(d=>Array.isArray(d.category)?d.category.includes(l):d.category===l);c(r)})}),c(x.projects)},0)}function z(){const i=document.getElementById("certifications");if(!i)return;const t=x.certifications.map((e,n)=>`
-      <div class="cert-orb-container reveal-pop" style="transition-delay: ${n*.1}s;">
-        <!-- The Glowing Orb -->
-        <div class="cert-orb">
-          <div class="orb-core"></div>
-          <div class="orb-radiation wave-1"></div>
-          <div class="orb-radiation wave-2"></div>
-          <div class="orb-title-wrapper">
-            <span class="orb-title">${e.title}</span>
-            <span class="orb-issuer">${e.issuer}</span>
-          </div>
-        </div>
+        `).join(""),e.querySelectorAll(".proj-item").forEach((r,g)=>{r.addEventListener("mouseenter",()=>l(c,g)),r.addEventListener("click",()=>l(c,g))}),l(c,0,!0)};i.forEach(c=>{c.addEventListener("click",()=>{i.forEach(g=>g.classList.remove("active")),c.classList.add("active");const s=c.getAttribute("data-filter"),r=s==="All"?h.projects:h.projects.filter(g=>Array.isArray(g.category)?g.category.includes(s):g.category===s);d(r)})}),d(h.projects)},0)}function P(){const t=document.getElementById("certifications");if(!t)return;const o=h.certifications.map((e,n)=>{let i="VERIFIED";e.issuer.includes("ICORIS")||e.title.includes("QR Code")?i="IEEE AUTHOR":e.issuer.includes("COMPFEST")?i="CTF PARTICIPANT":e.issuer.includes("Traveloka")?i="BACKEND DEV":e.issuer.includes("Kaggle")?i="ACCREDITED":e.issuer.includes("Rework")?i="CYBER BOOTCAMP":e.issuer.includes("Coding Studio")?i="TECH COURSE":e.issuer.includes("Mandiri Bersemi")&&(i="EDUCATOR");const a=e.image?`<img src="${e.image}" alt="${e.title}" loading="lazy" class="holo-cert-img">`:'<div class="holo-cert-no-img">NO PREVIEW AVAILABLE</div>';return`
+      <div class="holo-cert-card reveal-pop" data-index="${n}" style="transition-delay: ${n*.08}s;">
+        <div class="target-corner tl-tl"></div>
+        <div class="target-corner tl-tr"></div>
+        <div class="target-corner tl-bl"></div>
+        <div class="target-corner tl-br"></div>
         
-        <!-- The Expanded Card (Hidden by default, shown on hover) -->
-        <div class="cert-expanded-card">
-          <div class="cert-exp-img">
-            ${e.image?`<img src="${e.image}" alt="${e.title}" loading="lazy">`:'<div class="cert-no-img">NO IMAGE DATA</div>'}
+        <div class="holo-cert-thumb" onclick="openCertModal(${n})">
+          <div class="holo-scanline"></div>
+          ${a}
+          <div class="holo-inspect-hover">
+            <span>🔍 [ INSPECT CREDENTIAL ]</span>
           </div>
-          <div class="cert-exp-info">
-            <h4>${e.title}</h4>
-            <div class="cert-exp-issuer">${e.issuer} <span style="color:rgba(255,255,255,0.3)">// ${e.date}</span></div>
-            <p>${e.description}</p>
-          </div>
+          <span class="holo-card-badge">${i}</span>
+        </div>
+
+        <div class="holo-cert-body">
+          <div class="holo-cert-issuer">${e.issuer} <span class="holo-cert-date">// ${e.date}</span></div>
+          <h3 class="holo-cert-title">${e.title}</h3>
+          <p class="holo-cert-desc">${e.description||""}</p>
+        </div>
+
+        <div class="holo-cert-footer">
+          <span class="holo-status-tag">${e.note||"[ VERIFIED CREDENTIAL ]"}</span>
+          <button class="holo-inspect-btn" onclick="openCertModal(${n})">INSPECT &rarr;</button>
         </div>
       </div>
-    `).join("");i.innerHTML=`
+    `}).join("");t.innerHTML=`
     <style>
-      .scifi-certs-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 80px;
-        margin: 60px auto;
+      .holo-certs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+        margin: 40px auto;
         max-width: 1200px;
-        padding-bottom: 50px;
+        font-family: 'Space Grotesk', sans-serif;
       }
-      
-      .cert-orb-container {
+
+      .holo-cert-card {
         position: relative;
-        width: 180px;
-        height: 180px;
+        background: rgba(8, 14, 30, 0.75);
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+      }
+      .holo-cert-card:hover {
+        border-color: var(--neon);
+        background: rgba(12, 22, 45, 0.85);
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
+        transform: translateY(-5px);
+      }
+
+      .target-corner { position: absolute; width: 14px; height: 14px; border-color: var(--neon); border-style: solid; z-index: 3; transition: all 0.3s; pointer-events: none; }
+      .tl-tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+      .tl-tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+      .tl-bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+      .tl-br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+      .holo-cert-card:hover .tl-tl { top: 4px; left: 4px; }
+      .holo-cert-card:hover .tl-tr { top: 4px; right: 4px; }
+      .holo-cert-card:hover .tl-bl { bottom: 4px; left: 4px; }
+      .holo-cert-card:hover .tl-br { bottom: 4px; right: 4px; }
+
+      .holo-cert-thumb {
+        position: relative;
+        width: 100%;
+        height: 190px;
+        background: #020612;
+        border: 1px solid rgba(176, 38, 255, 0.4);
+        border-radius: 6px;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
       }
-      
-      /* Orb Base */
-      .cert-orb {
-        position: relative;
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        z-index: 2;
-        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-      
-      .orb-core {
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(176,38,255,0.7) 0%, rgba(5,217,232,0.3) 70%, transparent 100%);
-        box-shadow: 0 0 30px rgba(176,38,255,0.6), inset 0 0 20px rgba(5,217,232,0.8);
-        z-index: -1;
-        transition: all 0.3s;
-      }
-      .cert-orb-container:hover .orb-core {
-        box-shadow: 0 0 50px rgba(176,38,255,1), inset 0 0 30px rgba(5,217,232,1);
-      }
-      
-      /* Radiation Waves */
-      .orb-radiation {
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        border: 2px solid rgba(5, 217, 232, 0.5);
-        z-index: -2;
-        pointer-events: none;
-      }
-      .wave-1 {
-        width: 100%; height: 100%;
-        animation: radiate 2.5s infinite ease-out;
-      }
-      .wave-2 {
-        width: 100%; height: 100%;
-        animation: radiate 2.5s infinite ease-out 1.25s;
-      }
-      
-      @keyframes radiate {
-        0% { width: 100%; height: 100%; opacity: 0.8; border-color: rgba(5,217,232,0.8); }
-        100% { width: 220%; height: 220%; opacity: 0; border-color: rgba(176,38,255,0.1); }
-      }
-      
-      .orb-title-wrapper {
-        padding: 0 15px;
-        z-index: 3;
-      }
-      .orb-title {
-        display: block;
-        color: #fff;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 0.9rem;
-        font-weight: 900;
-        text-shadow: 0 0 10px #000;
-        line-height: 1.2;
-      }
-      .orb-issuer {
-        display: block;
-        color: var(--neon);
-        font-size: 0.65rem;
-        margin-top: 5px;
-        text-shadow: 0 0 10px #000;
-        font-family: 'Press Start 2P', monospace;
-        letter-spacing: -0.5px;
-      }
-      
-      /* Expanded Card (Holographic Transform) */
-      .cert-expanded-card {
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        width: 340px;
-        background: rgba(10, 15, 30, 0.95);
-        backdrop-filter: blur(15px);
-        border: 1px solid var(--neon);
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 0 40px rgba(5, 217, 232, 0.4), inset 0 0 20px rgba(176, 38, 255, 0.2);
-        opacity: 0;
-        z-index: 10;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        pointer-events: none;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-      }
-      
-      .cert-orb-container:hover .cert-expanded-card {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .cert-orb-container:hover .cert-orb {
-        transform: scale(0);
-        opacity: 0;
-      }
-      
-      .cert-exp-img {
-        width: 100%;
-        height: 200px;
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 8px;
-        overflow: hidden;
-        position: relative;
-        background: #000;
-      }
-      .cert-exp-img img {
+      .holo-cert-img {
         width: 100%;
         height: 100%;
         object-fit: contain;
+        transition: transform 0.4s ease, filter 0.4s ease;
+        filter: contrast(1.05) brightness(0.95);
       }
-      .cert-no-img {
-        width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
-        font-family: 'Press Start 2P', monospace; font-size: 0.8rem; color: rgba(255,255,255,0.3);
+      .holo-cert-card:hover .holo-cert-img {
+        transform: scale(1.04);
+        filter: contrast(1.1) brightness(1.05);
       }
-      
-      .cert-exp-info h4 {
-        color: #fff;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.15rem;
-        margin-bottom: 5px;
-      }
-      .cert-exp-issuer {
-        color: var(--magenta);
-        font-size: 0.75rem;
+      .holo-cert-no-img {
         font-family: 'Press Start 2P', monospace;
-        margin-bottom: 10px;
-        letter-spacing: -0.5px;
+        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.35);
+        text-align: center;
+        padding: 20px;
       }
-      .cert-exp-info p {
-        color: rgba(255,255,255,0.7);
+
+      .holo-scanline {
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 3px;
+        background: rgba(0, 240, 255, 0.7);
+        box-shadow: 0 0 8px rgba(0, 240, 255, 1);
+        animation: scanlinePass 3s linear infinite;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+      @keyframes scanlinePass {
+        0% { transform: translateY(-5px); }
+        100% { transform: translateY(195px); }
+      }
+
+      .holo-card-badge {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background: rgba(5, 10, 25, 0.85);
+        border: 1px solid var(--neon);
+        color: var(--neon);
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.55rem;
+        padding: 4px 8px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+        z-index: 3;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+      }
+
+      .holo-inspect-hover {
+        position: absolute;
+        inset: 0;
+        background: rgba(3, 8, 20, 0.65);
+        backdrop-filter: blur(2px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 4;
+      }
+      .holo-inspect-hover span {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.65rem;
+        color: #fff;
+        background: rgba(0, 240, 255, 0.2);
+        border: 1px solid var(--neon);
+        padding: 6px 12px;
+        border-radius: 4px;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+      }
+      .holo-cert-thumb:hover .holo-inspect-hover {
+        opacity: 1;
+      }
+
+      .holo-cert-body {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .holo-cert-issuer {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.6rem;
+        color: var(--magenta);
+        letter-spacing: -0.3px;
+      }
+      .holo-cert-date {
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .holo-cert-title {
+        font-size: 1.15rem;
+        color: #fff;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 4px 0 2px 0;
+      }
+      .holo-cert-desc {
         font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
         line-height: 1.5;
-        border-left: 2px solid var(--neon);
+        border-left: 2px solid rgba(0, 240, 255, 0.4);
         padding-left: 10px;
+        margin-top: 4px;
       }
-      
+
+      .holo-cert-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 12px;
+        border-top: 1px dashed rgba(0, 240, 255, 0.2);
+        margin-top: 5px;
+      }
+      .holo-status-tag {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.55rem;
+        color: var(--neon);
+        opacity: 0.8;
+      }
+      .holo-inspect-btn {
+        background: transparent;
+        border: 1px solid var(--neon);
+        color: var(--neon);
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .holo-inspect-btn:hover {
+        background: var(--neon);
+        color: #000;
+        box-shadow: 0 0 15px var(--neon);
+      }
+
+      #cert-inspector-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(3, 7, 20, 0.88);
+        backdrop-filter: blur(10px);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        animation: hero-fade-in 0.3s ease-out;
+      }
+      .cert-inspector-modal {
+        position: relative;
+        background: rgba(6, 12, 28, 0.95);
+        border: 2px solid var(--neon);
+        box-shadow: 0 0 50px rgba(0, 240, 255, 0.35);
+        border-radius: 12px;
+        max-width: 900px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 30px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .cert-inspector-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: transparent;
+        border: 1px solid rgba(0, 240, 255, 0.5);
+        color: var(--neon);
+        font-size: 1.2rem;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .cert-inspector-close:hover {
+        background: var(--neon);
+        color: #000;
+        box-shadow: 0 0 15px var(--neon);
+      }
+      .cert-modal-img-frame {
+        width: 100%;
+        max-height: 55vh;
+        background: #020510;
+        border: 1px solid rgba(176, 38, 255, 0.4);
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cert-modal-img-frame img {
+        max-width: 100%;
+        max-height: 55vh;
+        object-fit: contain;
+      }
+      .cert-modal-header h2 {
+        font-size: 1.5rem;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .cert-modal-header .issuer-bar {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.7rem;
+        color: var(--magenta);
+      }
+      .cert-modal-desc {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        border-left: 3px solid var(--neon);
+        padding-left: 15px;
+      }
+
       @media (max-width: 768px) {
-        .cert-expanded-card {
-          width: 300px;
+        .holo-certs-grid {
+          grid-template-columns: 1fr;
+        }
+        .cert-inspector-modal {
+          padding: 20px;
         }
       }
     </style>
-    
+
     <div class="section-inner">
       <div class="section-head reveal-pop">
         <h2 class="section-title" style="color: #fff; font-family: 'Space Grotesk', sans-serif;">CERTIFICATIONS</h2>
-        <span class="section-kicker">ACHIEVEMENTS</span>
+        <span class="section-kicker">ACHIEVEMENTS // HR CREDENTIAL REGISTRY</span>
       </div>
       
-      <div class="scifi-certs-wrapper">
-        ${t}
+      <div class="holo-certs-grid">
+        ${o}
       </div>
     </div>
-  `}function I(){const i=document.getElementById("skills");if(!i)return;const t=Object.entries(x.skills).map(([e,n],o)=>`
-    <div class="scifi-skill-cat reveal-${o%2===0?"left":"right"}">
+
+    <!-- Inspector Modal Container -->
+    <div id="cert-inspector-overlay" style="display: none;">
+      <div class="cert-inspector-modal">
+        <button class="cert-inspector-close" id="cert-modal-close">&times;</button>
+        <div class="cert-modal-img-frame" id="cert-modal-img-container"></div>
+        <div class="cert-modal-header">
+          <div class="issuer-bar" id="cert-modal-issuer"></div>
+          <h2 id="cert-modal-title"></h2>
+        </div>
+        <p class="cert-modal-desc" id="cert-modal-desc"></p>
+      </div>
+    </div>
+  `,window.openCertModal=e=>{const n=h.certifications[e];if(!n)return;const i=document.getElementById("cert-inspector-overlay"),a=document.getElementById("cert-modal-img-container"),p=document.getElementById("cert-modal-title"),l=document.getElementById("cert-modal-issuer"),d=document.getElementById("cert-modal-desc");i&&a&&p&&l&&d&&(a.innerHTML=n.image?`<img src="${n.image}" alt="${n.title}">`:`<div style="padding:40px; color:rgba(255,255,255,0.4); font-family:'Press Start 2P',monospace; font-size:0.8rem;">NO PREVIEW AVAILABLE</div>`,p.textContent=n.title,l.textContent=`${n.issuer} // ${n.date}`,d.textContent=n.description||"",i.style.display="flex")},setTimeout(()=>{const e=document.getElementById("cert-inspector-overlay"),n=document.getElementById("cert-modal-close");n&&e&&(n.addEventListener("click",()=>{e.style.display="none"}),e.addEventListener("click",i=>{i.target===e&&(e.style.display="none")})),window.addEventListener("keydown",i=>{i.key==="Escape"&&e&&(e.style.display="none")})},0)}function L(){const t=document.getElementById("skills");if(!t)return;const o=Object.entries(h.skills).map(([e,n],i)=>`
+    <div class="scifi-skill-cat reveal-${i%2===0?"left":"right"}">
       <h3>${e}</h3>
       <div class="skill-tags">
         ${n.map(a=>`<span>${a}</span>`).join("")}
       </div>
     </div>
-  `).join("");i.innerHTML=`
+  `).join("");t.innerHTML=`
     <style>
       .scifi-skills-grid {
         display: grid;
@@ -995,10 +1124,10 @@
       </div>
       
       <div class="scifi-skills-grid">
-        ${t}
+        ${o}
       </div>
     </div>
-  `}function P(){const i=document.getElementById("contact");i&&(i.innerHTML=`
+  `}function R(){const t=document.getElementById("contact");t&&(t.innerHTML=`
     <style>
       .contact-wrapper {
         display: flex;
@@ -1246,10 +1375,10 @@
             </div>
             
             <!-- Nodes -->
-            <a href="${x.profile.github}" target="_blank" class="cyber-node node-1" data-id="1" data-lbl="GITHUB_REPO" data-val="github.com/Hyphen-14">
+            <a href="${h.profile.github}" target="_blank" class="cyber-node node-1" data-id="1" data-lbl="GITHUB_REPO" data-val="github.com/Hyphen-14">
               <span class="node-icon">🐙</span>
             </a>
-            <a href="${x.profile.linkedin}" target="_blank" class="cyber-node node-2" data-id="2" data-lbl="LINKEDIN_PROFILE" data-val="yasin-taryaqil-aghyar">
+            <a href="${h.profile.linkedin}" target="_blank" class="cyber-node node-2" data-id="2" data-lbl="LINKEDIN_PROFILE" data-val="yasin-taryaqil-aghyar">
               <span class="node-icon">💼</span>
             </a>
             <a href="https://instagram.com/yasintaryaqil" target="_blank" class="cyber-node node-3" data-id="3" data-lbl="INSTAGRAM_HANDLE" data-val="@yasintaryaqil">
@@ -1263,7 +1392,7 @@
         
       </div>
     </div>
-  `,setTimeout(()=>{const t=document.querySelectorAll(".cyber-node"),e=document.getElementById("node-disp"),n=document.getElementById("nd-lbl"),o=document.getElementById("nd-val"),a=document.getElementById("nodes-container");function g(){if(!a)return;const p=a.getBoundingClientRect(),c=p.width/2,s=p.height/2;t.forEach(l=>{const r=l.getAttribute("data-id"),d=document.getElementById("tether-"+r);if(!d)return;const m=l.getBoundingClientRect(),b=m.left-p.left+m.width/2,h=m.top-p.top+m.height/2,u=Math.sin(Date.now()/300+r*2)*20,S=(c+b)/2+u,T=(s+h)/2-u;d.setAttribute("d",`M ${c} ${s} Q ${S} ${T} ${b} ${h}`)}),requestAnimationFrame(g)}g(),t.forEach(p=>{p.addEventListener("mouseenter",()=>{const c=p.getAttribute("data-id"),s=p.getAttribute("data-lbl"),l=p.getAttribute("data-val");n.innerText="> "+s,o.innerText=l,e.style.borderColor="var(--neon)",e.style.boxShadow="0 0 30px rgba(0, 240, 255, 0.4)",p.classList.add("active-node");const r=document.getElementById("tether-"+c);r&&(r.style.stroke="var(--neon)",r.style.strokeWidth="4")}),p.addEventListener("mouseleave",()=>{const c=p.getAttribute("data-id");n.innerText="SYSTEM STATUS",o.innerText="AWAITING PING...",e.style.borderColor="rgba(176, 38, 255, 0.5)",e.style.boxShadow="0 0 20px rgba(176, 38, 255, 0.2)",p.classList.remove("active-node");const s=document.getElementById("tether-"+c);s&&(s.style.stroke="rgba(176, 38, 255, 0.4)",s.style.strokeWidth="2")})})},0))}let v=!0,f=null;function L(){const i=document.getElementById("audio-toggle");i&&(i.textContent="🔊",i.addEventListener("click",()=>{v=!v,i.textContent=v?"🔊":"🔇",v&&!f&&(f=new(window.AudioContext||window.webkitAudioContext)),v&&y("start")}),document.querySelectorAll("a, button, .tab-btn").forEach(t=>{t.addEventListener("mouseenter",()=>y("hover"))}))}function y(i){if(!v)return;f||(f=new(window.AudioContext||window.webkitAudioContext)),f.state==="suspended"&&f.resume();const t=f.createOscillator(),e=f.createGain();t.connect(e),e.connect(f.destination);const n=f.currentTime;i==="hover"?(t.type="square",t.frequency.setValueAtTime(400,n),t.frequency.exponentialRampToValueAtTime(600,n+.05),e.gain.setValueAtTime(.05,n),e.gain.exponentialRampToValueAtTime(.01,n+.05),t.start(n),t.stop(n+.05)):i==="blip"?(t.type="square",t.frequency.setValueAtTime(800,n),e.gain.setValueAtTime(.02,n),e.gain.exponentialRampToValueAtTime(.01,n+.02),t.start(n),t.stop(n+.02)):i==="decrypt"?(t.type="sawtooth",t.frequency.setValueAtTime(800,n),t.frequency.linearRampToValueAtTime(2e3,n+.1),t.frequency.linearRampToValueAtTime(800,n+.2),e.gain.setValueAtTime(.02,n),e.gain.exponentialRampToValueAtTime(.01,n+.2),t.start(n),t.stop(n+.2)):i==="start"?(t.type="square",t.frequency.setValueAtTime(300,n),t.frequency.setValueAtTime(400,n+.1),t.frequency.setValueAtTime(600,n+.2),e.gain.setValueAtTime(.1,n),e.gain.linearRampToValueAtTime(0,n+.4),t.start(n),t.stop(n+.4)):i==="achievement"&&(t.type="square",t.frequency.setValueAtTime(440,n),t.frequency.setValueAtTime(554.37,n+.1),t.frequency.setValueAtTime(659.25,n+.2),t.frequency.setValueAtTime(880,n+.3),e.gain.setValueAtTime(.1,n),e.gain.linearRampToValueAtTime(0,n+.6),t.start(n),t.stop(n+.6))}let w=!1;function j(){O(),M(),L();const i=document.getElementById("title-screen"),t=document.getElementById("app-content");if(w)return;w=!0;const e=$(),n=i.querySelector("h1"),o=i.querySelector(".press-start"),a=i.querySelector(".cyber-lock"),g=document.getElementById("shackle");o.style.animation="none",o.textContent="[ DECRYPTING... ]",o.style.color="var(--gold)",a.style.animationDuration="1s";const p="UNLOCK PROFILE",c="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";let s=setInterval(()=>{n.textContent=p.split("").map(r=>r===" "?" ":c[Math.floor(Math.random()*c.length)]).join("")},50);setTimeout(()=>{clearInterval(s),n.textContent="ACCESS GRANTED",n.style.color="#41f28b",o.textContent="[ SYSTEM UNLOCKED ]",o.style.color="#41f28b",g&&(g.style.transform="translateY(-15px)"),y("start"),setTimeout(()=>{i.classList.add("hidden"),setTimeout(()=>{e(),i.style.display="none",t.style.display="block",R()},500)},400)},1e3),document.getElementById("crt-toggle").addEventListener("click",()=>{document.body.classList.toggle("crt"),y("blip")})}function R(){const i=document.querySelectorAll(".section"),t=new Set,e=new IntersectionObserver(o=>{o.forEach(a=>{if(a.isIntersecting){const g=a.target.id;!t.has(g)&&g!=="about"&&g!==""&&(t.add(g),B(`Explored: ${g.toUpperCase()}`)),a.target.querySelectorAll(".typed:not(.typing-done)").forEach(c=>{const s=c.getAttribute("data-text")||c.textContent;c.setAttribute("data-text",s),c.textContent="",c.classList.add("typing-done"),k(c,s,0)})}})},{threshold:.3});i.forEach(o=>e.observe(o));const n=new IntersectionObserver(o=>{o.forEach(a=>{a.isIntersecting&&a.target.classList.add("is-visible")})},{threshold:.1,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".reveal-pop, .reveal-left, .reveal-right").forEach(o=>n.observe(o))}function k(i,t,e){e<t.length&&(i.textContent+=t.charAt(e),e%3===0&&y("blip"),setTimeout(()=>k(i,t,e+1),20))}function B(i){const t=document.getElementById("achievement-popup"),e=document.getElementById("achievement-text");e.textContent=i,t.classList.add("show"),y("achievement"),setTimeout(()=>{t.classList.remove("show")},4e3)}document.addEventListener("DOMContentLoaded",j);function M(){const i=document.createElement("style");i.innerHTML=`
+  `,setTimeout(()=>{const o=document.querySelectorAll(".cyber-node"),e=document.getElementById("node-disp"),n=document.getElementById("nd-lbl"),i=document.getElementById("nd-val"),a=document.getElementById("nodes-container");function p(){if(!a)return;const l=a.getBoundingClientRect(),d=l.width/2,c=l.height/2;o.forEach(s=>{const r=s.getAttribute("data-id"),g=document.getElementById("tether-"+r);if(!g)return;const m=s.getBoundingClientRect(),f=m.left-l.left+m.width/2,b=m.top-l.top+m.height/2,u=Math.sin(Date.now()/300+r*2)*20,w=(d+f)/2+u,k=(c+b)/2-u;g.setAttribute("d",`M ${d} ${c} Q ${w} ${k} ${f} ${b}`)}),requestAnimationFrame(p)}p(),o.forEach(l=>{l.addEventListener("mouseenter",()=>{const d=l.getAttribute("data-id"),c=l.getAttribute("data-lbl"),s=l.getAttribute("data-val");n.innerText="> "+c,i.innerText=s,e.style.borderColor="var(--neon)",e.style.boxShadow="0 0 30px rgba(0, 240, 255, 0.4)",l.classList.add("active-node");const r=document.getElementById("tether-"+d);r&&(r.style.stroke="var(--neon)",r.style.strokeWidth="4")}),l.addEventListener("mouseleave",()=>{const d=l.getAttribute("data-id");n.innerText="SYSTEM STATUS",i.innerText="AWAITING PING...",e.style.borderColor="rgba(176, 38, 255, 0.5)",e.style.boxShadow="0 0 20px rgba(176, 38, 255, 0.2)",l.classList.remove("active-node");const c=document.getElementById("tether-"+d);c&&(c.style.stroke="rgba(176, 38, 255, 0.4)",c.style.strokeWidth="2")})})},0))}let y=!0,x=null;function j(){const t=document.getElementById("audio-toggle");t&&(t.textContent="🔊",t.addEventListener("click",()=>{y=!y,t.textContent=y?"🔊":"🔇",y&&!x&&(x=new(window.AudioContext||window.webkitAudioContext)),y&&v("start")}),document.querySelectorAll("a, button, .tab-btn").forEach(o=>{o.addEventListener("mouseenter",()=>v("hover"))}))}function v(t){if(!y)return;x||(x=new(window.AudioContext||window.webkitAudioContext)),x.state==="suspended"&&x.resume();const o=x.createOscillator(),e=x.createGain();o.connect(e),e.connect(x.destination);const n=x.currentTime;t==="hover"?(o.type="square",o.frequency.setValueAtTime(400,n),o.frequency.exponentialRampToValueAtTime(600,n+.05),e.gain.setValueAtTime(.05,n),e.gain.exponentialRampToValueAtTime(.01,n+.05),o.start(n),o.stop(n+.05)):t==="blip"?(o.type="square",o.frequency.setValueAtTime(800,n),e.gain.setValueAtTime(.02,n),e.gain.exponentialRampToValueAtTime(.01,n+.02),o.start(n),o.stop(n+.02)):t==="decrypt"?(o.type="sawtooth",o.frequency.setValueAtTime(800,n),o.frequency.linearRampToValueAtTime(2e3,n+.1),o.frequency.linearRampToValueAtTime(800,n+.2),e.gain.setValueAtTime(.02,n),e.gain.exponentialRampToValueAtTime(.01,n+.2),o.start(n),o.stop(n+.2)):t==="start"?(o.type="square",o.frequency.setValueAtTime(300,n),o.frequency.setValueAtTime(400,n+.1),o.frequency.setValueAtTime(600,n+.2),e.gain.setValueAtTime(.1,n),e.gain.linearRampToValueAtTime(0,n+.4),o.start(n),o.stop(n+.4)):t==="achievement"&&(o.type="square",o.frequency.setValueAtTime(440,n),o.frequency.setValueAtTime(554.37,n+.1),o.frequency.setValueAtTime(659.25,n+.2),o.frequency.setValueAtTime(880,n+.3),e.gain.setValueAtTime(.1,n),e.gain.linearRampToValueAtTime(0,n+.6),o.start(n),o.stop(n+.6))}let T=!1;function M(){A(),D(),j();const t=document.getElementById("title-screen"),o=document.getElementById("app-content");if(T)return;T=!0;const e=N(),n=t.querySelector("h1"),i=t.querySelector(".press-start"),a=t.querySelector(".cyber-lock"),p=document.getElementById("shackle");i.style.animation="none",i.textContent="[ DECRYPTING... ]",i.style.color="var(--gold)",a.style.animationDuration="1s";const l="UNLOCK PROFILE",d="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";let c=setInterval(()=>{n.textContent=l.split("").map(r=>r===" "?" ":d[Math.floor(Math.random()*d.length)]).join("")},50);setTimeout(()=>{clearInterval(c),n.textContent="ACCESS GRANTED",n.style.color="#41f28b",i.textContent="[ SYSTEM UNLOCKED ]",i.style.color="#41f28b",p&&(p.style.transform="translateY(-15px)"),v("start"),setTimeout(()=>{t.classList.add("hidden"),setTimeout(()=>{e(),t.style.display="none",o.style.display="block",B(),F()},500)},400)},1e3),document.getElementById("crt-toggle").addEventListener("click",()=>{document.body.classList.toggle("crt"),v("blip")})}function B(){const t=document.querySelectorAll(".section"),o=new Set,e=new IntersectionObserver(i=>{i.forEach(a=>{if(a.isIntersecting){const p=a.target.id;!o.has(p)&&p!=="about"&&p!==""&&(o.add(p),$(`Explored: ${p.toUpperCase()}`)),a.target.querySelectorAll(".typed:not(.typing-done)").forEach(d=>{const c=d.getAttribute("data-text")||d.textContent;d.setAttribute("data-text",c),d.textContent="",d.classList.add("typing-done"),E(d,c,0)})}})},{threshold:.3});t.forEach(i=>e.observe(i));const n=new IntersectionObserver(i=>{i.forEach(a=>{a.isIntersecting&&a.target.classList.add("is-visible")})},{threshold:.1,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".reveal-pop, .reveal-left, .reveal-right").forEach(i=>n.observe(i))}function E(t,o,e){e<o.length&&(t.textContent+=o.charAt(e),e%3===0&&v("blip"),setTimeout(()=>E(t,o,e+1),20))}function $(t){const o=document.getElementById("achievement-popup"),e=document.getElementById("achievement-text");e.textContent=t,o.classList.add("show"),v("achievement"),setTimeout(()=>{o.classList.remove("show")},4e3)}document.addEventListener("DOMContentLoaded",M);function D(){const t=document.createElement("style");t.innerHTML=`
     * { cursor: none !important; }
     .custom-cursor {
       position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99999;
@@ -1305,4 +1434,4 @@
       transform: translate(-50%, -50%);
       box-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
     }
-  `,document.head.appendChild(i);const t=document.createElement("div");t.className="custom-cursor",document.body.appendChild(t);const e=document.createElement("div");e.className="cursor-head",t.appendChild(e);const n=[],o=8;for(let l=0;l<o;l++){const r=document.createElement("div");r.className="cursor-tail",r.style.opacity=1-l/o;const d=10-l;r.style.width=d+"px",r.style.height=d+"px",t.appendChild(r),n.push({el:r,x:window.innerWidth/2,y:window.innerHeight/2})}let a=window.innerWidth/2,g=window.innerHeight/2,p=a,c=g;document.addEventListener("mousemove",l=>{a=l.clientX,g=l.clientY});function s(){p+=(a-p)*.4,c+=(g-c)*.4,e.style.left=p+"px",e.style.top=c+"px";let l=p,r=c;for(let d=0;d<n.length;d++){const m=n[d];m.x+=(l-m.x)*.4,m.y+=(r-m.y)*.4,m.el.style.left=m.x+"px",m.el.style.top=m.y+"px",l=m.x,r=m.y}requestAnimationFrame(s)}s()}function $(){const i=document.getElementById("warp-canvas");if(!i)return()=>{};const t=i.getContext("2d");function e(){i.width=window.innerWidth,i.height=window.innerHeight}window.addEventListener("resize",e),e();const n=[],o=400;let a=1,g=!0;for(let c=0;c<o;c++)n.push({x:(Math.random()-.5)*i.width*2,y:(Math.random()-.5)*i.height*2,z:Math.random()*i.width,pz:0});function p(){if(!g)return;t.fillStyle="rgba(5, 10, 31, 0.4)",t.fillRect(0,0,i.width,i.height);const c=i.width/2,s=i.height/2;a+=.3,a>25&&(a=25);for(let l=0;l<o;l++){const r=n[l];r.pz=r.z,r.z-=a,r.z<=0&&(r.z=i.width,r.pz=i.width,r.x=(Math.random()-.5)*i.width*2,r.y=(Math.random()-.5)*i.height*2);const d=r.x/r.z*i.width+c,m=r.y/r.z*i.height+s,b=r.x/r.pz*i.width+c,h=r.y/r.pz*i.height+s,u=1-r.z/i.width;t.beginPath(),t.moveTo(b,h),t.lineTo(d,m),t.strokeStyle=l%3===0?`rgba(176, 38, 255, ${u})`:`rgba(0, 240, 255, ${u})`,t.lineWidth=1+(1-r.z/i.width)*4,t.stroke()}requestAnimationFrame(p)}return p(),()=>{g=!1,window.removeEventListener("resize",e)}}
+  `,document.head.appendChild(t);const o=document.createElement("div");o.className="custom-cursor",document.body.appendChild(o);const e=document.createElement("div");e.className="cursor-head",o.appendChild(e);const n=[],i=8;for(let s=0;s<i;s++){const r=document.createElement("div");r.className="cursor-tail",r.style.opacity=1-s/i;const g=10-s;r.style.width=g+"px",r.style.height=g+"px",o.appendChild(r),n.push({el:r,x:window.innerWidth/2,y:window.innerHeight/2})}let a=window.innerWidth/2,p=window.innerHeight/2,l=a,d=p;document.addEventListener("mousemove",s=>{a=s.clientX,p=s.clientY});function c(){l+=(a-l)*.4,d+=(p-d)*.4,e.style.left=l+"px",e.style.top=d+"px";let s=l,r=d;for(let g=0;g<n.length;g++){const m=n[g];m.x+=(s-m.x)*.4,m.y+=(r-m.y)*.4,m.el.style.left=m.x+"px",m.el.style.top=m.y+"px",s=m.x,r=m.y}requestAnimationFrame(c)}c()}function N(){const t=document.getElementById("warp-canvas");if(!t)return()=>{};const o=t.getContext("2d");function e(){t.width=window.innerWidth,t.height=window.innerHeight}window.addEventListener("resize",e),e();const n=[],i=400;let a=1,p=!0;for(let d=0;d<i;d++)n.push({x:(Math.random()-.5)*t.width*2,y:(Math.random()-.5)*t.height*2,z:Math.random()*t.width,pz:0});function l(){if(!p)return;o.fillStyle="rgba(5, 10, 31, 0.4)",o.fillRect(0,0,t.width,t.height);const d=t.width/2,c=t.height/2;a+=.3,a>25&&(a=25);for(let s=0;s<i;s++){const r=n[s];r.pz=r.z,r.z-=a,r.z<=0&&(r.z=t.width,r.pz=t.width,r.x=(Math.random()-.5)*t.width*2,r.y=(Math.random()-.5)*t.height*2);const g=r.x/r.z*t.width+d,m=r.y/r.z*t.height+c,f=r.x/r.pz*t.width+d,b=r.y/r.pz*t.height+c,u=1-r.z/t.width;o.beginPath(),o.moveTo(f,b),o.lineTo(g,m),o.strokeStyle=s%3===0?`rgba(176, 38, 255, ${u})`:`rgba(0, 240, 255, ${u})`,o.lineWidth=1+(1-r.z/t.width)*4,o.stroke()}requestAnimationFrame(l)}return l(),()=>{p=!1,window.removeEventListener("resize",e)}}function F(){const t=document.getElementById("interstellar-bg-canvas");if(!t)return;const o=t.getContext("2d");function e(){t.width=window.innerWidth,t.height=window.innerHeight}window.addEventListener("resize",e,{passive:!0}),e();const n=450,i=[];for(let s=0;s<n;s++)i.push({x:(Math.random()-.5)*t.width*2.2,y:(Math.random()-.5)*t.height*2.2,z:Math.random()*t.width,pz:0});let a=window.scrollY||window.pageYOffset||0,p=0,l=1,d=null;window.addEventListener("scroll",()=>{const s=window.scrollY||window.pageYOffset||0,r=Math.abs(s-a);a=s,p=Math.min(26,p+r*.4),clearTimeout(d),d=setTimeout(()=>{p=0},150)},{passive:!0});function c(){o.fillStyle="rgba(5, 10, 25, 0.35)",o.fillRect(0,0,t.width,t.height);const s=t.width/2,r=t.height/2,g=.8+p;l+=(g-l)*.12,p*=.92;for(let m=0;m<n;m++){const f=i[m];f.pz=f.z,f.z-=l,f.z<=0&&(f.z=t.width,f.pz=t.width,f.x=(Math.random()-.5)*t.width*2.2,f.y=(Math.random()-.5)*t.height*2.2);const b=f.x/f.z*t.width+s,u=f.y/f.z*t.height+r,w=f.x/f.pz*t.width+s,k=f.y/f.pz*t.height+r,C=Math.max(.1,1-f.z/t.width),S=Math.min(1,C*(.8+l*.05));o.beginPath(),o.moveTo(w,k),o.lineTo(b,u),m%4===0?o.strokeStyle=`rgba(176, 38, 255, ${S})`:m%4===1?o.strokeStyle=`rgba(0, 240, 255, ${S})`:o.strokeStyle=`rgba(220, 245, 255, ${S*.85})`,o.lineWidth=Math.min(4.5,.8+(1-f.z/t.width)*(l>3?3.5:1.5)),o.stroke()}requestAnimationFrame(c)}c()}
