@@ -55,6 +55,7 @@ function init() {
         titleScreen.style.display = 'none';
         appContent.style.display = 'block';
         initScrollEffects();
+        initScrollWarpSpeed();
       }, 500);
     }, 400);
   }, 1000);
@@ -313,4 +314,105 @@ function initWarpSpeed() {
     isWarping = false;
     window.removeEventListener('resize', resize);
   };
+}
+
+
+function initScrollWarpSpeed() {
+  const canvas = document.getElementById('interstellar-bg-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize, { passive: true });
+  resize();
+
+  const numStars = 450;
+  const stars = [];
+  for (let i = 0; i < numStars; i++) {
+    stars.push({
+      x: (Math.random() - 0.5) * canvas.width * 2.2,
+      y: (Math.random() - 0.5) * canvas.height * 2.2,
+      z: Math.random() * canvas.width,
+      pz: 0
+    });
+  }
+
+  let lastScrollY = window.scrollY || window.pageYOffset || 0;
+  let scrollSpeedBonus = 0;
+  let currentSpeed = 1.0;
+  let isRunning = true;
+
+  let scrollTimeout = null;
+  window.addEventListener('scroll', () => {
+    const currentY = window.scrollY || window.pageYOffset || 0;
+    const delta = Math.abs(currentY - lastScrollY);
+    lastScrollY = currentY;
+
+    // Directly boost warp speed based on scroll velocity
+    scrollSpeedBonus = Math.min(26, scrollSpeedBonus + delta * 0.4);
+
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      scrollSpeedBonus = 0;
+    }, 150);
+  }, { passive: true });
+
+  function draw() {
+    if (!isRunning) return;
+
+    // Semi-transparent fade produces fluid light trails / motion blur
+    ctx.fillStyle = 'rgba(5, 10, 25, 0.35)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+
+    const targetSpeed = 0.8 + scrollSpeedBonus;
+    currentSpeed += (targetSpeed - currentSpeed) * 0.12;
+    scrollSpeedBonus *= 0.92;
+
+    for (let i = 0; i < numStars; i++) {
+      const star = stars[i];
+      star.pz = star.z;
+      star.z -= currentSpeed;
+
+      if (star.z <= 0) {
+        star.z = canvas.width;
+        star.pz = canvas.width;
+        star.x = (Math.random() - 0.5) * canvas.width * 2.2;
+        star.y = (Math.random() - 0.5) * canvas.height * 2.2;
+      }
+
+      const sx = (star.x / star.z) * canvas.width + cx;
+      const sy = (star.y / star.z) * canvas.height + cy;
+
+      const px = (star.x / star.pz) * canvas.width + cx;
+      const py = (star.y / star.pz) * canvas.height + cy;
+
+      const depthAlpha = Math.max(0.1, 1 - (star.z / canvas.width));
+      const warpGlow = Math.min(1, depthAlpha * (0.8 + currentSpeed * 0.05));
+
+      ctx.beginPath();
+      ctx.moveTo(px, py);
+      ctx.lineTo(sx, sy);
+
+      if (i % 4 === 0) {
+        ctx.strokeStyle = `rgba(176, 38, 255, ${warpGlow})`;
+      } else if (i % 4 === 1) {
+        ctx.strokeStyle = `rgba(0, 240, 255, ${warpGlow})`;
+      } else {
+        ctx.strokeStyle = `rgba(220, 245, 255, ${warpGlow * 0.85})`;
+      }
+
+      ctx.lineWidth = Math.min(4.5, 0.8 + (1 - star.z / canvas.width) * (currentSpeed > 3 ? 3.5 : 1.5));
+      ctx.stroke();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
 }

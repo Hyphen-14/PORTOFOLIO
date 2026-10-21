@@ -882,29 +882,44 @@ function renderCertifications() {
   if (!container) return;
 
   const certsHtml = portfolioData.certifications.map((cert, index) => {
+    let badgeText = "VERIFIED";
+    if (cert.issuer.includes("ICORIS") || cert.title.includes("QR Code")) badgeText = "IEEE AUTHOR";
+    else if (cert.issuer.includes("COMPFEST")) badgeText = "CTF PARTICIPANT";
+    else if (cert.issuer.includes("Traveloka")) badgeText = "BACKEND DEV";
+    else if (cert.issuer.includes("Kaggle")) badgeText = "ACCREDITED";
+    else if (cert.issuer.includes("Rework")) badgeText = "CYBER BOOTCAMP";
+    else if (cert.issuer.includes("Coding Studio")) badgeText = "TECH COURSE";
+    else if (cert.issuer.includes("Mandiri Bersemi")) badgeText = "EDUCATOR";
+
+    const imageHtml = cert.image 
+      ? `<img src="${cert.image}" alt="${cert.title}" loading="lazy" class="holo-cert-img">`
+      : `<div class="holo-cert-no-img">NO PREVIEW AVAILABLE</div>`;
+
     return `
-      <div class="cert-orb-container reveal-pop" style="transition-delay: ${index * 0.1}s;">
-        <!-- The Glowing Orb -->
-        <div class="cert-orb">
-          <div class="orb-core"></div>
-          <div class="orb-radiation wave-1"></div>
-          <div class="orb-radiation wave-2"></div>
-          <div class="orb-title-wrapper">
-            <span class="orb-title">${cert.title}</span>
-            <span class="orb-issuer">${cert.issuer}</span>
-          </div>
-        </div>
+      <div class="holo-cert-card reveal-pop" data-index="${index}" style="transition-delay: ${index * 0.08}s;">
+        <div class="target-corner tl-tl"></div>
+        <div class="target-corner tl-tr"></div>
+        <div class="target-corner tl-bl"></div>
+        <div class="target-corner tl-br"></div>
         
-        <!-- The Expanded Card (Hidden by default, shown on hover) -->
-        <div class="cert-expanded-card">
-          <div class="cert-exp-img">
-            ${cert.image ? `<img src="${cert.image}" alt="${cert.title}" loading="lazy">` : `<div class="cert-no-img">NO IMAGE DATA</div>`}
+        <div class="holo-cert-thumb" onclick="openCertModal(${index})">
+          <div class="holo-scanline"></div>
+          ${imageHtml}
+          <div class="holo-inspect-hover">
+            <span>🔍 [ INSPECT CREDENTIAL ]</span>
           </div>
-          <div class="cert-exp-info">
-            <h4>${cert.title}</h4>
-            <div class="cert-exp-issuer">${cert.issuer} <span style="color:rgba(255,255,255,0.3)">// ${cert.date}</span></div>
-            <p>${cert.description}</p>
-          </div>
+          <span class="holo-card-badge">${badgeText}</span>
+        </div>
+
+        <div class="holo-cert-body">
+          <div class="holo-cert-issuer">${cert.issuer} <span class="holo-cert-date">// ${cert.date}</span></div>
+          <h3 class="holo-cert-title">${cert.title}</h3>
+          <p class="holo-cert-desc">${cert.description || ''}</p>
+        </div>
+
+        <div class="holo-cert-footer">
+          <span class="holo-status-tag">${cert.note || '[ VERIFIED CREDENTIAL ]'}</span>
+          <button class="holo-inspect-btn" onclick="openCertModal(${index})">INSPECT &rarr;</button>
         </div>
       </div>
     `;
@@ -912,190 +927,358 @@ function renderCertifications() {
 
   container.innerHTML = `
     <style>
-      .scifi-certs-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 80px;
-        margin: 60px auto;
+      .holo-certs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+        margin: 40px auto;
         max-width: 1200px;
-        padding-bottom: 50px;
+        font-family: 'Space Grotesk', sans-serif;
       }
-      
-      .cert-orb-container {
+
+      .holo-cert-card {
         position: relative;
-        width: 180px;
-        height: 180px;
+        background: rgba(8, 14, 30, 0.75);
+        border: 1px solid rgba(0, 240, 255, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 16px;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        backdrop-filter: blur(10px);
+        overflow: hidden;
+      }
+      .holo-cert-card:hover {
+        border-color: var(--neon);
+        background: rgba(12, 22, 45, 0.85);
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
+        transform: translateY(-5px);
+      }
+
+      .target-corner { position: absolute; width: 14px; height: 14px; border-color: var(--neon); border-style: solid; z-index: 3; transition: all 0.3s; pointer-events: none; }
+      .tl-tl { top: 8px; left: 8px; border-width: 2px 0 0 2px; }
+      .tl-tr { top: 8px; right: 8px; border-width: 2px 2px 0 0; }
+      .tl-bl { bottom: 8px; left: 8px; border-width: 0 0 2px 2px; }
+      .tl-br { bottom: 8px; right: 8px; border-width: 0 2px 2px 0; }
+      .holo-cert-card:hover .tl-tl { top: 4px; left: 4px; }
+      .holo-cert-card:hover .tl-tr { top: 4px; right: 4px; }
+      .holo-cert-card:hover .tl-bl { bottom: 4px; left: 4px; }
+      .holo-cert-card:hover .tl-br { bottom: 4px; right: 4px; }
+
+      .holo-cert-thumb {
+        position: relative;
+        width: 100%;
+        height: 190px;
+        background: #020612;
+        border: 1px solid rgba(176, 38, 255, 0.4);
+        border-radius: 6px;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
       }
-      
-      /* Orb Base */
-      .cert-orb {
-        position: relative;
-        width: 160px;
-        height: 160px;
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        z-index: 2;
-        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-      
-      .orb-core {
-        position: absolute;
-        inset: 0;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(176,38,255,0.7) 0%, rgba(5,217,232,0.3) 70%, transparent 100%);
-        box-shadow: 0 0 30px rgba(176,38,255,0.6), inset 0 0 20px rgba(5,217,232,0.8);
-        z-index: -1;
-        transition: all 0.3s;
-      }
-      .cert-orb-container:hover .orb-core {
-        box-shadow: 0 0 50px rgba(176,38,255,1), inset 0 0 30px rgba(5,217,232,1);
-      }
-      
-      /* Radiation Waves */
-      .orb-radiation {
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        border: 2px solid rgba(5, 217, 232, 0.5);
-        z-index: -2;
-        pointer-events: none;
-      }
-      .wave-1 {
-        width: 100%; height: 100%;
-        animation: radiate 2.5s infinite ease-out;
-      }
-      .wave-2 {
-        width: 100%; height: 100%;
-        animation: radiate 2.5s infinite ease-out 1.25s;
-      }
-      
-      @keyframes radiate {
-        0% { width: 100%; height: 100%; opacity: 0.8; border-color: rgba(5,217,232,0.8); }
-        100% { width: 220%; height: 220%; opacity: 0; border-color: rgba(176,38,255,0.1); }
-      }
-      
-      .orb-title-wrapper {
-        padding: 0 15px;
-        z-index: 3;
-      }
-      .orb-title {
-        display: block;
-        color: #fff;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 0.9rem;
-        font-weight: 900;
-        text-shadow: 0 0 10px #000;
-        line-height: 1.2;
-      }
-      .orb-issuer {
-        display: block;
-        color: var(--neon);
-        font-size: 0.65rem;
-        margin-top: 5px;
-        text-shadow: 0 0 10px #000;
-        font-family: 'Press Start 2P', monospace;
-        letter-spacing: -0.5px;
-      }
-      
-      /* Expanded Card (Holographic Transform) */
-      .cert-expanded-card {
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        width: 340px;
-        background: rgba(10, 15, 30, 0.95);
-        backdrop-filter: blur(15px);
-        border: 1px solid var(--neon);
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 0 40px rgba(5, 217, 232, 0.4), inset 0 0 20px rgba(176, 38, 255, 0.2);
-        opacity: 0;
-        z-index: 10;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        pointer-events: none;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-      }
-      
-      .cert-orb-container:hover .cert-expanded-card {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .cert-orb-container:hover .cert-orb {
-        transform: scale(0);
-        opacity: 0;
-      }
-      
-      .cert-exp-img {
-        width: 100%;
-        height: 200px;
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 8px;
-        overflow: hidden;
-        position: relative;
-        background: #000;
-      }
-      .cert-exp-img img {
+      .holo-cert-img {
         width: 100%;
         height: 100%;
         object-fit: contain;
+        transition: transform 0.4s ease, filter 0.4s ease;
+        filter: contrast(1.05) brightness(0.95);
       }
-      .cert-no-img {
-        width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
-        font-family: 'Press Start 2P', monospace; font-size: 0.8rem; color: rgba(255,255,255,0.3);
+      .holo-cert-card:hover .holo-cert-img {
+        transform: scale(1.04);
+        filter: contrast(1.1) brightness(1.05);
       }
-      
-      .cert-exp-info h4 {
-        color: #fff;
-        font-family: 'Space Grotesk', sans-serif;
-        font-size: 1.15rem;
-        margin-bottom: 5px;
-      }
-      .cert-exp-issuer {
-        color: var(--magenta);
-        font-size: 0.75rem;
+      .holo-cert-no-img {
         font-family: 'Press Start 2P', monospace;
-        margin-bottom: 10px;
-        letter-spacing: -0.5px;
+        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.35);
+        text-align: center;
+        padding: 20px;
       }
-      .cert-exp-info p {
-        color: rgba(255,255,255,0.7);
+
+      .holo-scanline {
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 3px;
+        background: rgba(0, 240, 255, 0.7);
+        box-shadow: 0 0 8px rgba(0, 240, 255, 1);
+        animation: scanlinePass 3s linear infinite;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+      @keyframes scanlinePass {
+        0% { transform: translateY(-5px); }
+        100% { transform: translateY(195px); }
+      }
+
+      .holo-card-badge {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        background: rgba(5, 10, 25, 0.85);
+        border: 1px solid var(--neon);
+        color: var(--neon);
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.55rem;
+        padding: 4px 8px;
+        border-radius: 4px;
+        letter-spacing: 0.5px;
+        z-index: 3;
+        box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+      }
+
+      .holo-inspect-hover {
+        position: absolute;
+        inset: 0;
+        background: rgba(3, 8, 20, 0.65);
+        backdrop-filter: blur(2px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 4;
+      }
+      .holo-inspect-hover span {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.65rem;
+        color: #fff;
+        background: rgba(0, 240, 255, 0.2);
+        border: 1px solid var(--neon);
+        padding: 6px 12px;
+        border-radius: 4px;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+      }
+      .holo-cert-thumb:hover .holo-inspect-hover {
+        opacity: 1;
+      }
+
+      .holo-cert-body {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .holo-cert-issuer {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.6rem;
+        color: var(--magenta);
+        letter-spacing: -0.3px;
+      }
+      .holo-cert-date {
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .holo-cert-title {
+        font-size: 1.15rem;
+        color: #fff;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 4px 0 2px 0;
+      }
+      .holo-cert-desc {
         font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
         line-height: 1.5;
-        border-left: 2px solid var(--neon);
+        border-left: 2px solid rgba(0, 240, 255, 0.4);
         padding-left: 10px;
+        margin-top: 4px;
       }
-      
+
+      .holo-cert-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 12px;
+        border-top: 1px dashed rgba(0, 240, 255, 0.2);
+        margin-top: 5px;
+      }
+      .holo-status-tag {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.55rem;
+        color: var(--neon);
+        opacity: 0.8;
+      }
+      .holo-inspect-btn {
+        background: transparent;
+        border: 1px solid var(--neon);
+        color: var(--neon);
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .holo-inspect-btn:hover {
+        background: var(--neon);
+        color: #000;
+        box-shadow: 0 0 15px var(--neon);
+      }
+
+      #cert-inspector-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(3, 7, 20, 0.88);
+        backdrop-filter: blur(10px);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        animation: hero-fade-in 0.3s ease-out;
+      }
+      .cert-inspector-modal {
+        position: relative;
+        background: rgba(6, 12, 28, 0.95);
+        border: 2px solid var(--neon);
+        box-shadow: 0 0 50px rgba(0, 240, 255, 0.35);
+        border-radius: 12px;
+        max-width: 900px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 30px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .cert-inspector-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: transparent;
+        border: 1px solid rgba(0, 240, 255, 0.5);
+        color: var(--neon);
+        font-size: 1.2rem;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .cert-inspector-close:hover {
+        background: var(--neon);
+        color: #000;
+        box-shadow: 0 0 15px var(--neon);
+      }
+      .cert-modal-img-frame {
+        width: 100%;
+        max-height: 55vh;
+        background: #020510;
+        border: 1px solid rgba(176, 38, 255, 0.4);
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .cert-modal-img-frame img {
+        max-width: 100%;
+        max-height: 55vh;
+        object-fit: contain;
+      }
+      .cert-modal-header h2 {
+        font-size: 1.5rem;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .cert-modal-header .issuer-bar {
+        font-family: 'Press Start 2P', monospace;
+        font-size: 0.7rem;
+        color: var(--magenta);
+      }
+      .cert-modal-desc {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        border-left: 3px solid var(--neon);
+        padding-left: 15px;
+      }
+
       @media (max-width: 768px) {
-        .cert-expanded-card {
-          width: 300px;
+        .holo-certs-grid {
+          grid-template-columns: 1fr;
+        }
+        .cert-inspector-modal {
+          padding: 20px;
         }
       }
     </style>
-    
+
     <div class="section-inner">
       <div class="section-head reveal-pop">
         <h2 class="section-title" style="color: #fff; font-family: 'Space Grotesk', sans-serif;">CERTIFICATIONS</h2>
-        <span class="section-kicker">ACHIEVEMENTS</span>
+        <span class="section-kicker">ACHIEVEMENTS // HR CREDENTIAL REGISTRY</span>
       </div>
       
-      <div class="scifi-certs-wrapper">
+      <div class="holo-certs-grid">
         ${certsHtml}
       </div>
     </div>
+
+    <!-- Inspector Modal Container -->
+    <div id="cert-inspector-overlay" style="display: none;">
+      <div class="cert-inspector-modal">
+        <button class="cert-inspector-close" id="cert-modal-close">&times;</button>
+        <div class="cert-modal-img-frame" id="cert-modal-img-container"></div>
+        <div class="cert-modal-header">
+          <div class="issuer-bar" id="cert-modal-issuer"></div>
+          <h2 id="cert-modal-title"></h2>
+        </div>
+        <p class="cert-modal-desc" id="cert-modal-desc"></p>
+      </div>
+    </div>
   `;
+
+  window.openCertModal = (index) => {
+    const cert = portfolioData.certifications[index];
+    if (!cert) return;
+
+    const overlay = document.getElementById('cert-inspector-overlay');
+    const imgContainer = document.getElementById('cert-modal-img-container');
+    const titleEl = document.getElementById('cert-modal-title');
+    const issuerEl = document.getElementById('cert-modal-issuer');
+    const descEl = document.getElementById('cert-modal-desc');
+
+    if (overlay && imgContainer && titleEl && issuerEl && descEl) {
+      imgContainer.innerHTML = cert.image 
+        ? `<img src="${cert.image}" alt="${cert.title}">`
+        : `<div style="padding:40px; color:rgba(255,255,255,0.4); font-family:'Press Start 2P',monospace; font-size:0.8rem;">NO PREVIEW AVAILABLE</div>`;
+      titleEl.textContent = cert.title;
+      issuerEl.textContent = `${cert.issuer} // ${cert.date}`;
+      descEl.textContent = cert.description || '';
+      overlay.style.display = 'flex';
+    }
+  };
+
+  setTimeout(() => {
+    const overlay = document.getElementById('cert-inspector-overlay');
+    const closeBtn = document.getElementById('cert-modal-close');
+    if (closeBtn && overlay) {
+      closeBtn.addEventListener('click', () => {
+        overlay.style.display = 'none';
+      });
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.style.display = 'none';
+        }
+      });
+    }
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay) {
+        overlay.style.display = 'none';
+      }
+    });
+  }, 0);
 }
 
 function renderSkills() {

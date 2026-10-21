@@ -156,6 +156,14 @@ export const portfolioData = {
       image: import.meta.env.BASE_URL + "assets/projects/owasp-juice-shop.png"
     },
     {
+      name: "Smart City App Pentest",
+      category: "Cyber Security",
+      description: "Mobile application penetration testing and vulnerability assessment on Smart City Citizen platforms. Analyzed attack surfaces including insecure API endpoints, broken authorization (IDOR), sensitive local data storage, and network communication encryption flaws.",
+      tech: ["Cyber Security", "Mobile Pentest", "API Security", "Vulnerability Assessment"],
+      link: "https://github.com/Hyphen-14/smart-city-citizen-app-pentest",
+      image: import.meta.env.BASE_URL + "assets/projects/smart-city-pentest.svg"
+    },
+    {
       name: "QR-Phishing",
       category: "Cyber Security",
       description: "A proof-of-concept tool demonstrating the risks of malicious QR codes in phishing attacks.",
